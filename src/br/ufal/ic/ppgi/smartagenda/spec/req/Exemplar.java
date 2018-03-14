@@ -7,6 +7,9 @@ public class Exemplar {
 	 * Vale salientar que um livro pode ter 0 ou N exemplares
 	 * e um exemplar pertence a um livro.
 	 * 
+	 * Para o exemplar é necessário requerer um item, para que possa obter
+	 * as informações, por isso, foi trocado o atributo livro pelo atributo item.
+	 * 
 	 * O atributo livro tem sua tipagem como Object pelo fato que é uma classe
 	 * que será produzida por outra dupla, bem como o atributo tipo.
 	 * 
@@ -15,7 +18,7 @@ public class Exemplar {
 	 */
 	
 	private Long idexemplar;
-	private Object livro;
+	private Object item;
 	private Integer qtdExemplar;
 	private Object tipo; //Fisico ou Digital
 	private boolean disponivel;
@@ -34,11 +37,12 @@ public class Exemplar {
 	public void setIdexemplar(Long idexemplar) {
 		this.idexemplar = idexemplar;
 	}
-	public Object getLivro() {
-		return livro;
+
+	public Object getItem() {
+		return item;
 	}
-	public void setLivro(Object livro) {
-		this.livro = livro;
+	public void setItem(Object item) {
+		this.item = item;
 	}
 	public Integer getQtdExemplar() {
 		return qtdExemplar;
