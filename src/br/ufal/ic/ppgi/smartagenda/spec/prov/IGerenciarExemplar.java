@@ -16,4 +16,5 @@ public interface IGerenciarExemplar {
 	public Long saveExemplar(Serializable exemplar);
 	public void updateExemplar(Serializable exemplar);
 	public void removeExemplar(Serializable exemplar);
+	public Object setAvaliableExemplar(Boolean exemplar);
 }

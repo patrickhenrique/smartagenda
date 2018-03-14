@@ -11,5 +11,9 @@ import java.util.List;
  */
 public interface IBaixarExemplar {
 	
-	public List<Byte> getBaixarExemplar(Long identificador);
+	public Byte[] baixarExemplar(Long identificador);
+	public Byte[] visualizarExemplar(Long identificador);
+	public Byte[] reproduzirVideoExemplar(Long identificador);
+	public Byte[] reproduzirAudioExemplar(Long identificador);
+	public Byte[] exibirExemplar(Long identificador);
 }
