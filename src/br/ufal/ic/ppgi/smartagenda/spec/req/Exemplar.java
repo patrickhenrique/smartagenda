@@ -9,6 +9,9 @@ public class Exemplar {
 	 * 
 	 * O atributo livro tem sua tipagem como Object pelo fato que é uma classe
 	 * que será produzida por outra dupla, bem como o atributo tipo.
+	 * 
+	 * Como o professor falou em sala de aula a interpretação fica a cargo
+	 * do conector.
 	 */
 	
 	private Long idexemplar;
@@ -16,7 +19,15 @@ public class Exemplar {
 	private Integer qtdExemplar;
 	private Object tipo; //Fisico ou Digital
 	private boolean disponivel;
+	private byte[] arquivodigital;
 	
+	
+	public byte[] getArquivodigital() {
+		return arquivodigital;
+	}
+	public void setArquivodigital(byte[] arquivodigital) {
+		this.arquivodigital = arquivodigital;
+	}
 	public Long getIdexemplar() {
 		return idexemplar;
 	}
