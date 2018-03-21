@@ -28,8 +28,6 @@ public class Manager implements IManager{
 
 	@Override
 	public Object getRequiredInterface(String interfaceName) {
-	
-		Object.class.
 		return null;
 	}
 
