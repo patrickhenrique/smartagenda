@@ -1,8 +1,8 @@
-package br.ufal.ic.ppgi.smartagenda.exemplar.impl;
+package br.ufal.ic.ppgi.smartagenda.exemplarops.impl;
 
 import java.util.List;
 
-import br.ufal.ic.ppgi.smartagenda.exemplar.spec.prov.IManager;
+import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.prov.IManager;
 
 public class Manager implements IManager{
 
