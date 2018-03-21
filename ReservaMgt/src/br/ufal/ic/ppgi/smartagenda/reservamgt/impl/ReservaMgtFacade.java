@@ -21,5 +21,8 @@ class ReservaMgtFacade implements IReservaMgt {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	public Reserva cancelarReserva(int codReserva) {
+		
+		return null;
+	}
 }

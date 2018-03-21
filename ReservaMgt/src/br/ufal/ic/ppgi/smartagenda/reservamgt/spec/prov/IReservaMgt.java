@@ -9,5 +9,6 @@ public interface IReservaMgt {
 	public List<Reserva> consultarList(int codItem);
 	public void atualizarLista(List<Reserva> reservas);
 	public Reserva consultarReserva(int codReserva);
+	public Reserva cancelarReserva(int codReserva);
 
 }
