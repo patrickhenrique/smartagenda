@@ -1,5 +1,11 @@
 package br.ufal.notificacoes.impl;
 
-public class ComponentFactory {
+import java.util.List;
 
+public class ComponentFactory {
+	
+		
+			
+	
+	
 }
