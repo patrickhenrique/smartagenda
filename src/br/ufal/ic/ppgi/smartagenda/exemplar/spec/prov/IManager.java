@@ -1,4 +1,4 @@
-package br.ufal.ic.ppgi.smartagenda.spec.prov;
+package br.ufal.ic.ppgi.smartagenda.exemplar.spec.prov;
 
 import java.util.List;
 

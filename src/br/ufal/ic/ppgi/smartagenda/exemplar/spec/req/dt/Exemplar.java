@@ -1,4 +1,4 @@
-package br.ufal.ic.ppgi.smartagenda.spec.req.dt;
+package br.ufal.ic.ppgi.smartagenda.exemplar.spec.req.dt;
 
 public class Exemplar {
 
