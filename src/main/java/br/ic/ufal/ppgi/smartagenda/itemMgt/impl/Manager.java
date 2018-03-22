@@ -1,4 +1,6 @@
 package br.ic.ufal.ppgi.smartagenda.itemMgt.impl;
 
-public class Manager {
+import br.ic.ufal.ppgi.smartagenda.itemMgt.spec.prov.IManager;
+
+public class Manager implements IManager {
 }
