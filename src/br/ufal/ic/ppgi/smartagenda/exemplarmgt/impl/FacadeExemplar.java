@@ -1,12 +1,13 @@
 package br.ufal.ic.ppgi.smartagenda.exemplarmgt.impl;
 
+import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.prov.IExemplar;
 import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.prov.IManager;
 
-public class FacadeExemplar {
+class FacadeExemplar implements IExemplar {
 
-	IManager gerenciador;
+	IManager manager;
 
-	public FacadeExemplar(IManager gerenciador) {
-		this.gerenciador = gerenciador;
+	public FacadeExemplar(IManager manager) {
+		this.manager = manager;
 	}	
 }

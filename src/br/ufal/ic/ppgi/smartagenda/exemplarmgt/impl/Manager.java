@@ -3,8 +3,14 @@ package br.ufal.ic.ppgi.smartagenda.exemplarmgt.impl;
 import java.util.List;
 
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.prov.IManager;
-
-public class Manager implements IManager{
+/**
+ * realiza a interface
+IManager, utilizada para integrar instâncias de componentes dentro de uma 
+composição de software
+ * @author João Miguel e Edival
+ *
+ */
+class Manager implements IManager{
 
 	@Override
 	public List<String> getProvidedInterfaces() {
