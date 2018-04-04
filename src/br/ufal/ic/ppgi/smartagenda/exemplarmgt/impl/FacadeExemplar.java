@@ -10,4 +10,6 @@ class FacadeExemplar implements IExemplar {
 	public FacadeExemplar(IManager manager) {
 		this.manager = manager;
 	}	
+	
+	
 }
