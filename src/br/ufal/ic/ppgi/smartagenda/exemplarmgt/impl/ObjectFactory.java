@@ -22,7 +22,8 @@ class ObjectFactory {
 	 */
 	public ExemplarController createExemplar() {
 
-		ExemplarController exemplar = new ExemplarController();
+		IManager manager = new Manager();
+		ExemplarController exemplar = new ExemplarController(manager);
 		return exemplar;
 
 	}

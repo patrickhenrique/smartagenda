@@ -23,16 +23,46 @@ class ExemplarController {
 
 	}
 
-	boolean addExemplar(Long idItem, Long qtdExemplar, String tipo, String codigoIndentificador,
-			byte[] arquivodigital) {
-
-		return true;
-	}
-
-	long editExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIndentificador,
+	/**
+	 * @desc Faz a adição de um exemplar
+	 * @param idExemplar
+	 * @param idItem
+	 * @param qtdExemplar
+	 * @param tipo
+	 * @param codigoIndentificador
+	 * @param arquivodigital
+	 * @return
+	 */
+	Long addExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIndentificador,
 			byte[] arquivodigital) {
 		ExemplarDt exemplarDt = new ExemplarDt();
-		exemplarDt.idexemplar = idExemplar;
+		exemplarDt.idExemplar = idExemplar;
+		exemplarDt.idItem = idItem;
+		exemplarDt.qtdExemplar = qtdExemplar;
+		exemplarDt.tipoExemplar = tipo;
+		exemplarDt.codigoIndentificador = codigoIndentificador;
+		exemplarDt.arquivodigital = arquivodigital;
+
+		IPersistenceReq req = (IPersistenceReq) this.manager.getRequiredInterface("IPersistenceReq");
+
+		return req.save(exemplarDt);
+
+	}
+
+	/**
+	 * @desc Edita os atributos de um exemplar
+	 * @param idExemplar
+	 * @param idItem
+	 * @param qtdExemplar
+	 * @param tipo
+	 * @param codigoIndentificador
+	 * @param arquivodigital
+	 * @return
+	 */
+	Boolean editExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIndentificador,
+			byte[] arquivodigital) {
+		ExemplarDt exemplarDt = new ExemplarDt();
+		exemplarDt.idExemplar = idExemplar;
 		exemplarDt.idItem = idItem;
 		exemplarDt.qtdExemplar = qtdExemplar;
 		exemplarDt.tipo = tipo;
@@ -40,38 +70,52 @@ class ExemplarController {
 		exemplarDt.arquivodigital = arquivodigital;
 
 		IPersistenceReq req = (IPersistenceReq) this.manager.getRequiredInterface("IPersistenceReq");
-		req.update(exemplarDt);
 
-		return idExemplar;
+		Boolean result = req.update(exemplarDt);
+
+		return result;
 	}
 
 	/**
-	 * 
+	 * @desc Apaga um exemplar com base do idExemplar informado
 	 * @param idExemplar
 	 * @return
 	 */
 	boolean deleteExemplar(Long idExemplar) {
 
 		ExemplarDt exemplarDt = new ExemplarDt();
-		exemplarDt.idexemplar = idExemplar;
+		exemplarDt.idExemplar = idExemplar;
 		IPersistenceReq req = (IPersistenceReq) this.manager.getRequiredInterface("IPersistenceReq");
-		req.remove(exemplarDt);
+		return req.remove(exemplarDt);
 
-		return true;
 	}
 
-	List<ExemplarDt> getExemplar(Long idItem) {
-		
+	/**
+	 * @desc Lista todos os exemplares de determinado item
+	 * @param idItem
+	 * @return List<ExemplarDt>
+	 */
+	List<ExemplarDt> getListExemplarItem(Long idItem) {
+
+		IPersistenceReq req = (IPersistenceReq) this.manager.getRequiredInterface("IPersistenceReq");
+
+		List<ExemplarDt> list = req.list(idItem);
+		return list;
+
+	}
+
+	/**
+	 * @desc Retorna um exemplar com base no id informado
+	 * @param idExemplar
+	 * @return ExemplarDt
+	 */
+	ExemplarDt getExemplar(Long idExemplar) {
 		ExemplarDt exemplarDt = new ExemplarDt();
-		exemplarDt.idexemplar = idExemplar;
+		exemplarDt.idExemplar = idExemplar;
 		IPersistenceReq req = (IPersistenceReq) this.manager.getRequiredInterface("IPersistenceReq");
-		req.remove(exemplarDt);
-		
-		
-		
 
+		exemplarDt = req.get(idExemplar);
+		return exemplarDt;
 	}
-
-	
 
 }

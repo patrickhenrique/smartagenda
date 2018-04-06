@@ -7,12 +7,16 @@ import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ExemplarDt;
 public interface IPersistenceReq {
 
 	public Long save(ExemplarDt exemplar);
+	
+	public ExemplarDt get(Long idExemplar);
 
-	public void update(ExemplarDt exemplar);
+	public boolean update(ExemplarDt exemplar);
 
-	public void remove(ExemplarDt exemplar);
+	public boolean remove(ExemplarDt exemplar);
 
 	public List<ExemplarDt> search(ExemplarDt exemplar);
+	
+	public List<ExemplarDt> list(Long idItem);
 
 	public ExemplarDt search(Long idExemplar);
 
