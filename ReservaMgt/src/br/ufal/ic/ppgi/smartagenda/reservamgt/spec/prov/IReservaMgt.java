@@ -10,7 +10,13 @@ public interface IReservaMgt {
 	public void atualizarLista(List<Reserva> reservas);
 	
 	public Reserva criarReserva(int codItem, int codUsuario);
-	public Reserva consultarReserva(int codReserva, int codItem, int codUsuario);
+	public Reserva consultarReserva(int codReserva);
+	
+	/**
+	 * Verificar se o item está disponível.
+	 */
+	public Reserva verificarDisponibilidade(int codItem, int codUsuario);
+	
 	public Reserva cancelarReserva(int codReserva);
 	public Reserva finalizarReserva(int codReserva);
 
