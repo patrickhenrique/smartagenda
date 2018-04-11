@@ -18,7 +18,6 @@ class ReservaMgtFacade implements IReservaMgt {
 	@Override
 	public void atualizarLista(List<Reserva> reservas) {
 		// TODO Auto-generated method stub
-
 	}
 	
 	@Override
@@ -28,7 +27,13 @@ class ReservaMgtFacade implements IReservaMgt {
 	}
 
 	@Override
-	public Reserva consultarReserva(int codReserva, int codUsuario, int codItem) {
+	public Reserva consultarReserva(int codReserva) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public Reserva verificarDisponibilidade(int codItem, int codUsuario) {
 		// TODO Auto-generated method stub
 		return null;
 	}
