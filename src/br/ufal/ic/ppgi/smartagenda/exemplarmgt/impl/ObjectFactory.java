@@ -3,7 +3,7 @@ package br.ufal.ic.ppgi.smartagenda.exemplarmgt.impl;
 import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.prov.IManager;
 
 class ObjectFactory {
-	ExemplarController exemplar;
+	ExemplarController exemplarController;
 
 	/**
 	 * @desc Criacao de um novo exemplar na instanciação da factory
@@ -11,20 +11,20 @@ class ObjectFactory {
 	 */
 	public ObjectFactory() {
 
-		this.exemplar = this.createExemplar();
+		this.exemplarController = this.createExemplarController();
 	}
 
 
 	/**
-	 * @desc Cria um novo exemplar retornando ao método
+	 * @desc Cria um novo exemplarController com base no manager
 	 * @param manager
 	 * @return
 	 */
-	public ExemplarController createExemplar() {
+	public ExemplarController createExemplarController() {
 
-		IManager manager = new Manager();
-		ExemplarController exemplar = new ExemplarController(manager);
-		return exemplar;
+		IManager manager = (IManager) new Manager();
+		ExemplarController exemplarController = new ExemplarController(manager);
+		return exemplarController;
 
 	}
 

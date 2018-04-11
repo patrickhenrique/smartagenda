@@ -1,6 +1,5 @@
 package br.ufal.ic.ppgi.smartagenda.exemplarmgt.impl;
 
-import java.io.Serializable;
 import java.util.List;
 
 import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.prov.IManager;
@@ -39,7 +38,7 @@ class ExemplarController {
 		exemplarDt.idExemplar = idExemplar;
 		exemplarDt.idItem = idItem;
 		exemplarDt.qtdExemplar = qtdExemplar;
-		exemplarDt.tipoExemplar = tipo;
+		exemplarDt.tipo = tipo;
 		exemplarDt.codigoIndentificador = codigoIndentificador;
 		exemplarDt.arquivodigital = arquivodigital;
 

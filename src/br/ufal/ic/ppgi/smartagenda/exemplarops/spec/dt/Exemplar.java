@@ -16,60 +16,12 @@ public class Exemplar {
 	 * conector.
 	 */
 
-	private Long idexemplar;
-	private Object item;
-	private Integer qtdExemplar;
-	private Object tipo; // Fisico ou Digital
-	private String codigoIndentificador;
-	private byte[] arquivodigital;
-
-	public byte[] getArquivodigital() {
-		return arquivodigital;
-	}
-
-	public String getCodigoIndentificador() {
-		return codigoIndentificador;
-	}
-
-	public void setCodigoIndentificador(String codigoIndentificador) {
-		this.codigoIndentificador = codigoIndentificador;
-	}
-
-	public void setArquivodigital(byte[] arquivodigital) {
-		this.arquivodigital = arquivodigital;
-	}
-
-	public Long getIdexemplar() {
-		return idexemplar;
-	}
-
-	public void setIdexemplar(Long idexemplar) {
-		this.idexemplar = idexemplar;
-	}
-
-	public Object getItem() {
-		return item;
-	}
-
-	public void setItem(Object item) {
-		this.item = item;
-	}
-
-	public Integer getQtdExemplar() {
-		return qtdExemplar;
-	}
-
-	public void setQtdExemplar(Integer qtdExemplar) {
-		this.qtdExemplar = qtdExemplar;
-	}
-
-	public Object getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(Object tipo) {
-		this.tipo = tipo;
-	}
+	public Long idexemplar;
+	public Object item;
+	public Integer qtdExemplar;
+	public Object tipo; // Fisico ou Digital
+	public String codigoIndentificador;
+	public byte[] arquivodigital;
 
 
 }
