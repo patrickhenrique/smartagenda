@@ -6,12 +6,11 @@ import br.ufal.ic.ppgi.smartagenda.reservamgt.spec.dt.Item;
 import br.ufal.ic.ppgi.smartagenda.reservamgt.spec.dt.Reserva;
 import br.ufal.ic.ppgi.smartagenda.reservamgt.spec.dt.Usuario;
 
-public interface IReservaMgtProv {
+public interface IReservaMgt {
 
-	public List<Reserva> consultarLista(Item item);
-	public void atualizarLista(List<Reserva> reservas);
-	
-	public Reserva criarReserva(Item item, Usuario usuario);
+	public List<Reserva> recuperarReservas(Item item);
+
+	public Reserva criarReserva(Item item, Usuario usuario)throws Exception ;
 	public Reserva consultarReserva(Reserva reserva);
 	
 	/**

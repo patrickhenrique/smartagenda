@@ -1,44 +1,68 @@
 package br.ufal.ic.ppgi.smartagenda.reservamgt.impl;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import br.ufal.ic.ppgi.smartagenda.reservamgt.spec.dt.Item;
 import br.ufal.ic.ppgi.smartagenda.reservamgt.spec.dt.Reserva;
 import br.ufal.ic.ppgi.smartagenda.reservamgt.spec.dt.Usuario;
 import br.ufal.ic.ppgi.smartagenda.reservamgt.spec.prov.IManager;
-import br.ufal.ic.ppgi.smartagenda.reservamgt.spec.req.IOperacoesReq;
+import br.ufal.ic.ppgi.smartagenda.reservamgt.spec.prov.IManager.Interfaces;
+import br.ufal.ic.ppgi.smartagenda.reservamgt.spec.req.IReservaDAOReq;
 
 public class ReservaControle {
 		
-	IOperacoesReq opReq;
+	IReservaDAOReq opReq;
 	IManager manager;
+	
 	public ReservaControle(IManager manager) {
 		this.manager = manager;
-		opReq = (IOperacoesReq) manager.getRequiredInterface("IOperacoesReq");
-	}
-
-	public List<Reserva> consultarLista(Item item) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public void atualizarLista(List<Reserva> reservas) {
-		// TODO Auto-generated method stub
+		opReq = (IReservaDAOReq) manager.getRequiredInterface(Interfaces.Required.IOperacoesDAOReq);
 	}
 	
-	public Reserva criarReserva(Item item, Usuario usuario) {
+	public Reserva criarReserva(Item item, Usuario usuario) throws Exception {
+		Boolean existeReserva = opReq.existeReservaAtiva(item.codigo, usuario.codigo);
+		if(existeReserva) {
+			throw new Exception("Usuário já possui uma reserva ativa para o item.");
+		}
+		
 		Reserva reserva = new Reserva();
 		reserva.setItem(item);
 		reserva.setUsuario(usuario);
 		
-		opReq.criarReserva(reserva);
+		Date dataAtual = new Date();
+		reserva.setCriadaEm(dataAtual);
+		
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime((Date) dataAtual.clone());
+		calendar.add(Calendar.DAY_OF_YEAR, 7);
+		
+		Date validoAte = calendar.getTime();
+		
+		reserva.setValidoAte(validoAte);
+		
+		reserva = opReq.criarReserva(reserva);
 		
 		return reserva;
 	}
 
-	public Reserva consultarReserva(Reserva reserva) {
-		// TODO Auto-generated method stub
-		return null;
+	public Reserva atualizarReserva(Reserva reserva) throws Exception {
+		Boolean existeReserva = opReq.existeReserva(reserva.getCodigo());
+		if(existeReserva) {
+			reserva = opReq.atualizarReserva(reserva);
+		}else {
+			throw new Exception("Reserva não existe.");
+		}
+		return reserva;		
+	}
+	
+	public List<Reserva> recuperarReservas(Item item) {
+		return opReq.recuperarReservas(item.codigo);
+	}
+	
+	public Reserva recuperarReserva(Reserva reserva) {
+		return opReq.recuperarReserva(reserva.getCodigo());
 	}
 	
 	public Reserva verificarDisponibilidade(Item item, Usuario usuario) {

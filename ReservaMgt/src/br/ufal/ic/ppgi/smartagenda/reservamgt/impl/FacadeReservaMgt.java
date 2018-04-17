@@ -6,9 +6,9 @@ import br.ufal.ic.ppgi.smartagenda.reservamgt.spec.dt.Item;
 import br.ufal.ic.ppgi.smartagenda.reservamgt.spec.dt.Reserva;
 import br.ufal.ic.ppgi.smartagenda.reservamgt.spec.dt.Usuario;
 import br.ufal.ic.ppgi.smartagenda.reservamgt.spec.prov.IManager;
-import br.ufal.ic.ppgi.smartagenda.reservamgt.spec.prov.IReservaMgtProv;
+import br.ufal.ic.ppgi.smartagenda.reservamgt.spec.prov.IReservaMgt;
 
-class FacadeReservaMgt implements IReservaMgtProv {
+class FacadeReservaMgt implements IReservaMgt {
 
 	private ReservaControle reservaControle;
 	
@@ -17,23 +17,18 @@ class FacadeReservaMgt implements IReservaMgtProv {
 	}
 	
 	@Override
-	public List<Reserva> consultarLista(Item item) {		
-		return reservaControle.consultarLista(item);
+	public List<Reserva> recuperarReservas(Item item) {		
+		return reservaControle.recuperarReservas(item);
 	}
 
 	@Override
-	public void atualizarLista(List<Reserva> reservas) {
-		reservaControle.atualizarLista(reservas);
-	}
-	
-	@Override
-	public Reserva criarReserva(Item item, Usuario usuario) {
+	public Reserva criarReserva(Item item, Usuario usuario) throws Exception {
 		return reservaControle.criarReserva(item, usuario);
 	}
 
 	@Override
 	public Reserva consultarReserva(Reserva reserva) {
-		return reservaControle.consultarReserva(reserva);
+		return reservaControle.recuperarReserva(reserva);
 	}
 	
 	@Override
