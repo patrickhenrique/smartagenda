@@ -1,7 +1,10 @@
 # Compiled class file
+
 *.class
 
 ReservaMgt/bin/
+
+.git/
 
 # Log file
 *.log
