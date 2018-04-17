@@ -1,32 +1,45 @@
 package br.ufal.ic.ppgi.smartagenda.reservamgt.impl;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 import br.ufal.ic.ppgi.smartagenda.reservamgt.spec.prov.IManager;
 
 class Manager implements IManager {
+	
+	private Map<String, Object> requiredInterface;
+	private Map<String, Object> provideInterface;
 
-	public List<String> getProvidedInterfaces() {
-		// TODO Auto-generated method stub
-		return null;
+	public Manager() {
+		//REQUIRED INTERFACES
+		this.requiredInterface = new HashMap<>();		
+		this.requiredInterface.put(Interfaces.Required.IExemplarReq.name(), null);
+		
+		//PROVIDED INTERFACES
+		this.provideInterface = new HashMap<>();
+		this.provideInterface.put(Interfaces.Provided.IReservaMgtProv.name(), new FacadeReservaMgt(this));
+		
+	}
+	
+	public Set<String> getProvidedInterfaces() {
+		return this.provideInterface.keySet();
 	}
 
-	public List<String> getRequiredInterfaces() {
-		// TODO Auto-generated method stub
-		return null;
+	public Set<String> getRequiredInterfaces() {
+		return this.requiredInterface.keySet();
 	}
 
 	public Object getProvidedInterface(String interfaceName) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.provideInterface.get(interfaceName);
 	}
 
 	public Object getRequiredInterface(String interfaceName) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.requiredInterface.get(interfaceName);
 	}
 
 	public void setRequiredInterface(String interfaceName, Object objeto) {
-		// TODO Auto-generated method stub
+		this.requiredInterface.put(interfaceName, objeto);
 	}
+	
 }
