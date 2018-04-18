@@ -9,6 +9,7 @@ import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.prov.IManager;
  *
  */
 class ObjectFactory {
+	IManager manager;
 	ExemplarController exemplarController;
 
 	/**
@@ -16,8 +17,7 @@ class ObjectFactory {
 	 * @param manager
 	 */
 	ObjectFactory(IManager manager) {
-
-		this.exemplarController = this.createExemplarController(manager);
+		this.manager = manager;
 	}
 
 	/**
@@ -25,11 +25,9 @@ class ObjectFactory {
 	 * @param manager
 	 * @return
 	 */
-	ExemplarController createExemplarController(IManager manager) {
-		ExemplarController exemplarController = new ExemplarController(manager);
-
+	ExemplarController createExemplarController() {
+		ExemplarController exemplarController = new ExemplarController(this.manager);
 		return exemplarController;
-
 	}
 
 }

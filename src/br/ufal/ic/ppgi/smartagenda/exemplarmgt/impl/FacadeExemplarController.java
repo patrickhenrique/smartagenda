@@ -22,7 +22,7 @@ class FacadeExemplarController implements IExemplar {
 
 		ObjectFactory factory = new ObjectFactory(manager);
 
-		this.exemplarController = factory.createExemplarController(manager);
+		this.exemplarController = factory.createExemplarController();
 
 	}
 
