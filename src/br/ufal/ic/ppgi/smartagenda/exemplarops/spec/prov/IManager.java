@@ -1,13 +1,17 @@
 package br.ufal.ic.ppgi.smartagenda.exemplarops.spec.prov;
 
-import java.util.List;
+import java.util.Set;
 
 public interface IManager {
-	
-	public List<String> getProvidedInterfaces();
-	public List<String> getRequiredInterfaces();
-	public Object getProvideInterface(String interfaceName);
+
+	public Set<String> getProvidedInterfaces();
+
+	public Set<String> getRequiredInterfaces();
+
+	public Object getProvidedInterface(String interfaceName);
+
+	public void setRequiredInterface(String interfaceName, Object interfaceObject);
+
 	public Object getRequiredInterface(String interfaceName);
-	public Object setRequiredInterface(String interfaceName,Object objeto);
 
 }
