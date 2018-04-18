@@ -12,6 +12,11 @@ import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.prov.IManager;
  *
  */
 class Manager implements IManager {
+	/**
+	Manager(){
+		FacadeExemplarController facadeExemplar = new FacadeExemplarController(this);
+	}
+	*/
 
 	@Override
 	public List<String> getProvidedInterfaces() {

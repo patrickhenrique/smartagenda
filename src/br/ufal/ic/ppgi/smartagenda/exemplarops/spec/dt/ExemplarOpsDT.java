@@ -1,6 +1,6 @@
 package br.ufal.ic.ppgi.smartagenda.exemplarops.spec.dt;
 
-public class Exemplar {
+public class ExemplarOpsDT {
 
 	/**
 	 * Classe responsável pelo a representação de um exemplar Vale salientar que um

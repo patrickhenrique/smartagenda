@@ -3,7 +3,7 @@ package br.ufal.ic.ppgi.smartagenda.exemplarops.spec.prov;
 import java.io.Serializable;
 import java.util.List;
 
-import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.dt.Exemplar;
+import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.dt.ExemplarOpsDT;
 
 /**
  * 
@@ -12,9 +12,9 @@ import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.dt.Exemplar;
  */
 public interface IConsultarExemplar {
 
-	public Exemplar consultarExemplar(String codigoIndentificador);
-	public Exemplar consultarExemplar(Long identificador);
-	public List<Exemplar> consultarExemplar(Object tipo);
-	public List<Exemplar> consultarExemplar(Serializable item);
+	public ExemplarOpsDT consultarExemplar(String codigoIndentificador);
+	public ExemplarOpsDT consultarExemplar(Long identificador);
+	public List<ExemplarOpsDT> consultarExemplar(Object tipo);
+	public List<ExemplarOpsDT> consultarExemplar(Serializable item);
 		
 }
