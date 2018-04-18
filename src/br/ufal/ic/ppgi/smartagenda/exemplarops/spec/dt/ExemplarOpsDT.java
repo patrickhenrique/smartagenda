@@ -15,11 +15,11 @@ public class ExemplarOpsDT {
 	 * Como o professor falou em sala de aula a interpretação fica a cargo do
 	 * conector.
 	 */
-
-	public Long idexemplar;
-	public Object item;
+		
+	public Long idExemplar;
+	public Long idItem;
 	public Integer qtdExemplar;
-	public Object tipo; // Fisico ou Digital
+	public String tipo; // Fisico ou Digital enum
 	public String codigoIndentificador;
 	public byte[] arquivodigital;
 

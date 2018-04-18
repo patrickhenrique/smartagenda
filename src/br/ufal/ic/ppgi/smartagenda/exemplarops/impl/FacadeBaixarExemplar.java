@@ -26,8 +26,9 @@ class FacadeBaixarExemplar implements IBaixarExemplar {
 
 	@Override
 	public byte[] baixarExemplar(Long identificador) {
-		// TODO Auto-generated method stub
-		return null;
+	
+		return this.exemplar.baixarExemplar(identificador);
+		
 	}
 
 	@Override
