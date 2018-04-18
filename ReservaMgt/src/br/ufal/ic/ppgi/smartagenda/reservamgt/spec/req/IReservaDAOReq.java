@@ -11,6 +11,7 @@ public interface IReservaDAOReq {
 	public Reserva atualizarReserva(Reserva reserva);
 	
 	public Reserva recuperarReserva(int codReserva);
+	public Reserva recuperarReserva(int codItem, int codUsuario);
 	
 	public List<Reserva> recuperarReservas(int codItem);
 	

@@ -11,12 +11,13 @@ public interface IReservaMgt {
 	public List<Reserva> recuperarReservas(Item item);
 
 	public Reserva criarReserva(Item item, Usuario usuario)throws Exception ;
-	public Reserva consultarReserva(Reserva reserva);
-	
+	public Reserva recuperarReserva(Reserva reserva) throws Exception;
+	public Reserva recuperarReserva(Item item, Usuario usuario)throws Exception;
 	/**
 	 * Verificar se o item está disponível.
-	 */
-	public Reserva verificarDisponibilidade(Item item, Usuario usuario);
+	 */	
+	public Boolean existeReservaAtiva(Item item, Usuario usuario);
+	public Boolean existeReserva(Reserva reserva);
 	
 	public Reserva cancelarReserva(Reserva reserva);
 	public Reserva finalizarReserva(Reserva reserva);

@@ -2,7 +2,8 @@
 
 *.class
 
-ReservaMgt/bin/
+**/bin/
+**/ReservaMgt/bin/
 
 .git/
 

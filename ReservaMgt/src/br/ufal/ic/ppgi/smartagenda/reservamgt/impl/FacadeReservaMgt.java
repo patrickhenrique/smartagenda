@@ -27,13 +27,22 @@ class FacadeReservaMgt implements IReservaMgt {
 	}
 
 	@Override
-	public Reserva consultarReserva(Reserva reserva) {
+	public Reserva recuperarReserva(Reserva reserva) throws Exception {
 		return reservaControle.recuperarReserva(reserva);
 	}
 	
+	public Reserva recuperarReserva(Item item, Usuario usuario)throws Exception{
+		return reservaControle.recuperarReserva(item, usuario);
+	}
+	
 	@Override
-	public Reserva verificarDisponibilidade(Item item, Usuario usuario) {
-		return reservaControle.verificarDisponibilidade(item, usuario);
+	public Boolean existeReservaAtiva(Item item, Usuario usuario) {
+		return reservaControle.existeReservaAtiva(item, usuario);
+	}
+	
+	@Override
+	public Boolean existeReserva(Reserva reserva) {
+		return reservaControle.existeReserva(reserva);
 	}
 	
 	@Override

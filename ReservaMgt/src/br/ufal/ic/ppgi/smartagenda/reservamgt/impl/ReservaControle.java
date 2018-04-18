@@ -14,10 +14,8 @@ import br.ufal.ic.ppgi.smartagenda.reservamgt.spec.req.IReservaDAOReq;
 public class ReservaControle {
 		
 	IReservaDAOReq opReq;
-	IManager manager;
 	
 	public ReservaControle(IManager manager) {
-		this.manager = manager;
 		opReq = (IReservaDAOReq) manager.getRequiredInterface(Interfaces.Required.IOperacoesDAOReq);
 	}
 	
@@ -65,18 +63,32 @@ public class ReservaControle {
 		return opReq.recuperarReserva(reserva.getCodigo());
 	}
 	
-	public Reserva verificarDisponibilidade(Item item, Usuario usuario) {
-		// TODO Auto-generated method stub
-		return null;
+
+	public Reserva recuperarReserva(Item item, Usuario usuario) {
+		return opReq.recuperarReserva(item.codigo, usuario.codigo);
+	}
+	
+	public Boolean existeReservaAtiva(Item item, Usuario usuario) {
+		return opReq.existeReservaAtiva(item.codigo, usuario.codigo);
+	}
+	
+	public Boolean existeReserva(Reserva reserva) {
+		return opReq.existeReserva(reserva.getCodigo());
 	}
 	
 	public Reserva cancelarReserva(Reserva reserva) {
-		// TODO Auto-generated method stub		
-		return null;
+		
+		reserva.setStatus(Boolean.FALSE);
+		reserva.setFinalizadaEm(new Date());
+		
+		return opReq.atualizarReserva(reserva);
 	}
 
 	public Reserva finalizarReserva(Reserva reserva) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		reserva.setStatus(Boolean.TRUE);
+		reserva.setFinalizadaEm(new Date());
+		
+		return opReq.atualizarReserva(reserva);
 	}
 }

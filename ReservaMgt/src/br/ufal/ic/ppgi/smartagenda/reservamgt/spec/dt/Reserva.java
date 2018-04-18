@@ -10,7 +10,7 @@ public class Reserva {
 	private Date disponivelEm;
 	private Date validoAte;
 	private Date finalizadaEm;
-	
+	private Boolean status;
 	
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
@@ -66,6 +66,14 @@ public class Reserva {
 	
 	public Date getFinalizadaEm() {
 		return this.finalizadaEm;
+	}
+	
+	public void setStatus(Boolean status) {
+		this.status = status;
+	}
+	
+	public Boolean getStatus() {
+		return this.status;
 	}
 	
 }

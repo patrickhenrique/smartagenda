@@ -15,12 +15,12 @@ class Manager implements IManager {
 	public Manager() {
 		//REQUIRED INTERFACES
 		this.requiredInterface = new HashMap<>();		
-		this.requiredInterface.put(Interfaces.Required.IExemplarReq.name(), null);
-		this.requiredInterface.put(Interfaces.Required.IOperacoesDAOReq.name(), null);
+		this.requiredInterface.put(Required.IExemplarReq.name(), null);
+		this.requiredInterface.put(Required.IOperacoesDAOReq.name(), null);
 		
 		//PROVIDED INTERFACES
 		this.provideInterface = new HashMap<>();
-		this.provideInterface.put(Interfaces.Provided.IReservaMgt.name(), new FacadeReservaMgt(this));
+		this.provideInterface.put(Provided.IReservaMgt.name(), new FacadeReservaMgt(this));
 		
 	}
 	
