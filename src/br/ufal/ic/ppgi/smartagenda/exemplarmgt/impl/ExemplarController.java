@@ -10,7 +10,7 @@ import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ItemDT;
 /**
  * Responsável pela criacao de um exemplar
  * 
- * @author João Miguel e Edival
+ * @author João Miguel e Edival Junior
  *
  */
 class ExemplarController {

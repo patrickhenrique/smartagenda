@@ -5,10 +5,10 @@ import java.util.List;
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.prov.IManager;
 
 /**
- * realiza a interface IManager, utilizada para integrar instâncias de
+ * @desc Realiza a interface IManager, utilizada para integrar instâncias de
  * componentes dentro de uma composição de software
  * 
- * @author João Miguel e Edival
+ * @author João Miguel e Edival Junior
  *
  */
 class Manager implements IManager {
