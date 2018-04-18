@@ -4,8 +4,8 @@ import java.util.List;
 
 import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.prov.IManager;
 import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.req.IPersistenceReq;
-import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ExemplarDt;
-import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ItemDt;
+import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ExemplarDT;
+import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ItemDT;
 
 /**
  * Responsável pela criacao de um exemplar
@@ -34,7 +34,7 @@ class ExemplarController {
 	 */
 	Long addExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIndentificador,
 			byte[] arquivodigital) {
-		ExemplarDt exemplarDt = new ExemplarDt();
+		ExemplarDT exemplarDt = new ExemplarDT();
 		exemplarDt.idExemplar = idExemplar;
 		exemplarDt.idItem = idItem;
 		exemplarDt.qtdExemplar = qtdExemplar;
@@ -60,7 +60,7 @@ class ExemplarController {
 	 */
 	Boolean editExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIndentificador,
 			byte[] arquivodigital) {
-		ExemplarDt exemplarDt = new ExemplarDt();
+		ExemplarDT exemplarDt = new ExemplarDT();
 		exemplarDt.idExemplar = idExemplar;
 		exemplarDt.idItem = idItem;
 		exemplarDt.qtdExemplar = qtdExemplar;
@@ -82,7 +82,7 @@ class ExemplarController {
 	 */
 	boolean deleteExemplar(Long idExemplar) {
 
-		ExemplarDt exemplarDt = new ExemplarDt();
+		ExemplarDT exemplarDt = new ExemplarDT();
 		exemplarDt.idExemplar = idExemplar;
 		IPersistenceReq req = (IPersistenceReq) this.manager.getRequiredInterface("IPersistenceReq");
 		return req.remove(exemplarDt);
@@ -94,11 +94,11 @@ class ExemplarController {
 	 * @param idItem
 	 * @return List<ExemplarDt>
 	 */
-	List<ExemplarDt> getListExemplarItem(Long idItem) {
+	List<ExemplarDT> getListExemplarItem(Long idItem) {
 
 		IPersistenceReq req = (IPersistenceReq) this.manager.getRequiredInterface("IPersistenceReq");
 
-		List<ExemplarDt> list = req.list(idItem);
+		List<ExemplarDT> list = req.list(idItem);
 		return list;
 
 	}
@@ -108,8 +108,8 @@ class ExemplarController {
 	 * @param idExemplar
 	 * @return ExemplarDt
 	 */
-	ExemplarDt getExemplar(Long idExemplar) {
-		ExemplarDt exemplarDt = new ExemplarDt();
+	ExemplarDT getExemplar(Long idExemplar) {
+		ExemplarDT exemplarDt = new ExemplarDT();
 		exemplarDt.idExemplar = idExemplar;
 		IPersistenceReq req = (IPersistenceReq) this.manager.getRequiredInterface("IPersistenceReq");
 

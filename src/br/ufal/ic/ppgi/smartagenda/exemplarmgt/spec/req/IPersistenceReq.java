@@ -2,27 +2,28 @@ package br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.req;
 
 import java.util.List;
 
-import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ExemplarDt;
+import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ExemplarDT;
+import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ItemDT;
 
 public interface IPersistenceReq {
 
-	public Long save(ExemplarDt exemplar);
+	public Long save(ExemplarDT exemplar);
 	
-	public ExemplarDt get(Long idExemplar);
+	public ExemplarDT get(Long idExemplar);
 
-	public boolean update(ExemplarDt exemplar);
+	public boolean update(ExemplarDT exemplar);
 
-	public boolean remove(ExemplarDt exemplar);
+	public boolean remove(ExemplarDT exemplar);
 
-	public List<ExemplarDt> search(ExemplarDt exemplar);
+	public List<ExemplarDT> search(ExemplarDT exemplar);
 	
-	public List<ExemplarDt> list(Long idItem);
+	public List<ExemplarDT> list(Long idItem);
 
-	public ExemplarDt search(Long idExemplar);
+	public ExemplarDT search(Long idExemplar);
 
-	public ExemplarDt search(String codigoIndentificador);
+	public ExemplarDT search(String codigoIndentificador);
 
-	public List<ExemplarDt> search(Object tipo);
+	public List<ExemplarDT> search(Object tipo);
 
-	public List<ExemplarDt> searchItemExemplar(ExemplarDt item);
+	public List<ExemplarDT> searchItemExemplar(ItemDT item);
 }

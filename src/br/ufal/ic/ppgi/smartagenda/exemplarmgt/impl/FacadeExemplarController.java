@@ -5,7 +5,7 @@ import java.util.List;
 
 import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.prov.IExemplar;
 import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.prov.IManager;
-import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ExemplarDt;
+import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ExemplarDT;
 
 class FacadeExemplarController implements IExemplar {
 

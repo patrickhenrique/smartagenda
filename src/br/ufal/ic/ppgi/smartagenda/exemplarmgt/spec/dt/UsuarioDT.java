@@ -1,6 +1,6 @@
 package br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt;
 
-public class UsuarioDt {
+public class UsuarioDT {
 
 	public Long idUsuario;
 	public String permissao;
