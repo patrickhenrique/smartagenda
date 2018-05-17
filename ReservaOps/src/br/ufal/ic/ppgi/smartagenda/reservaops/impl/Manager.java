@@ -1,4 +1,4 @@
-package br.ufal.ic.ppgi.smartagenda.reservaops.impl;
+package src.br.ufal.ic.ppgi.smartagenda.reservaops.impl;
 
 import java.util.HashMap;
 import java.util.Map;
