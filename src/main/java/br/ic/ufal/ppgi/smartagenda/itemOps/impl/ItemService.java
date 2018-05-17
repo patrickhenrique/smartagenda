@@ -7,6 +7,8 @@ import br.ic.ufal.ppgi.smartagenda.itemOps.spec.prov.IManager;
 import br.ic.ufal.ppgi.smartagenda.itemOps.spec.req.IUsuarioOps;
 import br.ic.ufal.ppgi.smartagenda.itemOps.spec.req.ItemMgt;
 
+import java.util.List;
+
 public class ItemService {
 
     private IManager manager;
@@ -55,9 +57,18 @@ public class ItemService {
         if(usuario == null)
             throw new ItemException("Usuario nao encontrado");
 
-
-        return null;
+        return itemMgt.getById(idItem);
     }
+
+    public ItemDt consultar(int id){
+        return itemMgt.getById(id);
+    }
+
+    public List<ItemDt> filtrar(String titulo, String autor, Integer ano, String tipo){
+        return itemMgt.filter(titulo, autor, ano, tipo);
+    }
+
+
 
 
     private void validaItem(ItemDt item) throws ItemException {

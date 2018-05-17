@@ -5,6 +5,6 @@ import br.ic.ufal.ppgi.smartagenda.itemOps.spec.dt.ItemDt;
 public interface IAcessarDetalhesOps {
 
 
-    ItemDt detalhes(int id);
+    ItemDt detalhes(int id, int idUsuario);
 
 }
