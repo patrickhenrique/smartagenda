@@ -1,7 +1,12 @@
 package br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt;
 
 import java.io.Serializable;
-
+/**
+ * @desc Atributos do Exemplar
+ * 
+ * @author João Miguel e Edival Junior
+ *
+ */
 public class ExemplarDT implements Serializable {
 
 	public Long idExemplar;

@@ -3,6 +3,7 @@ package br.ufal.ic.ppgi.smartagenda.exemplarmgt.impl;
 import java.util.List;
 
 import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ExemplarDT;
+import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ItemDT;
 import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.prov.IExemplar;
 import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.prov.IManager;
 
@@ -52,6 +53,32 @@ class FacadeExemplarController implements IExemplar {
 	@Override
 	public ExemplarDT getExemplar(Long idExemplar) {
 		return this.exemplarController.getExemplar(idExemplar);
+	}
+
+	@Override
+	public List<ExemplarDT> searchExemplar(ItemDT idItem, String tipo) {
+		
+		return this.exemplarController.searchExemplar(idItem, tipo);
+	}
+
+	@Override
+	public List<ExemplarDT> searchExemplar(ExemplarDT exemplar) {
+		return this.exemplarController.searchExemplar(exemplar);
+	}
+
+	@Override
+	public List<ExemplarDT> searchExemplar(Long idItem) {
+		return this.exemplarController.searchExemplar(idItem);
+	}
+
+	@Override
+	public List<ExemplarDT> searchExemplar(String codigoIdentificador) {
+		return this.exemplarController.searchExemplar(codigoIdentificador);
+	}
+
+	@Override
+	public List<ExemplarDT> searchExemplar(ItemDT item) {
+		return this.exemplarController.searchExemplar(item);
 	}
 
 }
