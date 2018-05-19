@@ -1,7 +1,5 @@
 package br.ufal.ic.ppgi.smartagenda.exemplarops.impl;
 
-import java.io.Serializable;
-
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.prov.IGerenciarExemplar;
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.prov.IManager;
 
@@ -20,27 +18,34 @@ public class FacadeGerenciarExemplar implements IGerenciarExemplar {
 
 	}
 
+
 	@Override
-	public Long saveExemplar(Serializable exemplar) {
-		// TODO Auto-generated method stub
-		return null;
+	public boolean setAvaliableExemplar(Long idExemplar, Long idUsuario) {
+		return this.exemplar.setAvaliableExemplar(idExemplar, idUsuario);
 	}
 
 	@Override
-	public void updateExemplar(Serializable exemplar) {
-		// TODO Auto-generated method stub
-		
+	public boolean setUnavaliableExemplar(Long idExemplar, Long idUsuario) {
+		return this.exemplar.setUnavaliableExemplar(idExemplar, idUsuario);
 	}
 
 	@Override
-	public void removeExemplar(Serializable exemplar) {
-		// TODO Auto-generated method stub
-		
+	public Long saveExemplaraddExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo,
+			String codigoIdentificador, byte[] arquivodigital, Long idUsuario) {
+		return this.exemplar.saveExemplar(idExemplar, idItem, qtdExemplar, tipo, codigoIdentificador, arquivodigital, idUsuario);
 	}
 
 	@Override
-	public Object setAvaliableExemplar(Boolean exemplar) {
-		// TODO Auto-generated method stub
-		return null;
+	public boolean updateExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo,
+			String codigoIdentificador, byte[] arquivodigital, Long idUsuario) {
+		return this.exemplar.updateExemplar(idExemplar, idItem, qtdExemplar, tipo, codigoIdentificador, arquivodigital, idUsuario);
 	}
+
+	@Override
+	public boolean removeExemplar(Long idExemplar, Long idUsuario) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
 }

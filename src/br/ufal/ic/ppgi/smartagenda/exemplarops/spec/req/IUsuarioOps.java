@@ -1,10 +1,6 @@
 package br.ufal.ic.ppgi.smartagenda.exemplarops.spec.req;
 
-import java.util.List;
 
-import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ExemplarDT;
-import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ItemDT;
-import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.dt.ExemplarOpsDT;
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.dt.UsuarioOpsDT;
 
 /**
@@ -33,7 +29,7 @@ public interface IUsuarioOps {
 
 	boolean podeConsultar(Long idUsuario, Long idExemplar);
 
-	boolean podeGerenciar(Long idUsuario, Long idExemplar);
+	boolean podeGerenciar(Long idUsuario);
 
 	String getPermissaoUsuario(Long idUsuario);
 	

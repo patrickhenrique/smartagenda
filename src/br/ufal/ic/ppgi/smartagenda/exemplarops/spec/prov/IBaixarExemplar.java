@@ -1,9 +1,5 @@
 package br.ufal.ic.ppgi.smartagenda.exemplarops.spec.prov;
 
-import java.util.List;
-
-import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.dt.ExemplarOpsDT;
-
 /**
  * Interface responsável pelo a "view" do exemplar, quando o mesmo for
  * disponível para visualização em browser.

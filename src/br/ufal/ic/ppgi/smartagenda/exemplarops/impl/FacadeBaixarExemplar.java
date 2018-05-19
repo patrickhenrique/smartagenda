@@ -1,7 +1,6 @@
 package br.ufal.ic.ppgi.smartagenda.exemplarops.impl;
 
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.prov.IManager;
-import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.dt.ExemplarOpsDT;
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.prov.IBaixarExemplar;
 
 /**

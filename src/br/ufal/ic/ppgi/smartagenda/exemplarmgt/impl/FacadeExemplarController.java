@@ -6,7 +6,6 @@ import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ExemplarDT;
 import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ItemDT;
 import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.prov.IExemplar;
 import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.prov.IManager;
-import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.dt.ExemplarOpsDT;
 
 /**
  * @desc Classe que implementa uma interface provida
@@ -36,9 +35,20 @@ class FacadeExemplarController implements IExemplar {
 	}
 
 	@Override
+	public Long addExemplar(ExemplarDT exemplar) {
+		return this.exemplarController.addExemplar(exemplar);
+	}
+
+	@Override
 	public boolean editExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIdentificador,
 			byte[] arquivodigital) {
-		return this.exemplarController.editExemplar(idExemplar, idItem, qtdExemplar, tipo, codigoIdentificador, arquivodigital);
+		return this.exemplarController.editExemplar(idExemplar, idItem, qtdExemplar, tipo, codigoIdentificador,
+				arquivodigital);
+	}
+
+	@Override
+	public boolean editExemplar(ExemplarDT exemplar) {
+		return this.exemplarController.editExemplar(exemplar);
 	}
 
 	@Override
@@ -58,7 +68,7 @@ class FacadeExemplarController implements IExemplar {
 
 	@Override
 	public List<ExemplarDT> searchExemplar(ItemDT idItem, String tipo) {
-		
+
 		return this.exemplarController.searchExemplar(idItem, tipo);
 	}
 
@@ -84,7 +94,7 @@ class FacadeExemplarController implements IExemplar {
 
 	@Override
 	public ExemplarDT getExemplarByTipo(Long idExemplar, String tipo) {
-		return this.exemplarController.getExemplarByTipo(idExemplar, tipo) ;
+		return this.exemplarController.getExemplarByTipo(idExemplar, tipo);
 	}
 
 }

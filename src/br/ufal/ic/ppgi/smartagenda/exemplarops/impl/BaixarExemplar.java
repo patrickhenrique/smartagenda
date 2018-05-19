@@ -2,10 +2,8 @@ package br.ufal.ic.ppgi.smartagenda.exemplarops.impl;
 
 import java.io.Serializable;
 
-import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.prov.IExemplar;
-import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.req.IPersistenceReq;
+
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.dt.ExemplarOpsDT;
-import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.prov.IBaixarExemplar;
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.prov.IManager;
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.req.IExemplarOps;
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.req.IUsuarioOps;

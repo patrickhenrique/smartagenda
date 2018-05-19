@@ -4,7 +4,6 @@ import java.util.List;
 
 import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ExemplarDT;
 import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ItemDT;
-import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.dt.ExemplarOpsDT;
 
 /**
  * @desc Interface do Exemplar
@@ -26,6 +25,12 @@ public interface IExemplar {
 	 */
 	Long addExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIdentificador,
 			byte[] arquivodigital);
+	/**
+	 * @desc Faz a adicao de um exemplar quando recebido um objeto do tipo exemplarDt
+	 * @param exemplar
+	 * @return Long id_exemplar
+	 */
+	Long addExemplar(ExemplarDT exemplar);
 
 	/**
 	 * @desc Edita os atributos de um exemplar
@@ -39,6 +44,12 @@ public interface IExemplar {
 	 */
 	boolean editExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIdentificador,
 			byte[] arquivodigital);
+	/**
+	 * @desc Edita os atributos de um exemplar com  base em um objeto do tipo ExemplarDt
+	 * @param exemplar
+	 * @return boolean
+	 */
+	boolean editExemplar(ExemplarDT exemplar);
 
 	/**
 	 * @desc Apaga um exemplar com base do idExemplar informado

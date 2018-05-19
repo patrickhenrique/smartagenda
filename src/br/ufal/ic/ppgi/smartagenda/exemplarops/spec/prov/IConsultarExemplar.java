@@ -1,6 +1,5 @@
 package br.ufal.ic.ppgi.smartagenda.exemplarops.spec.prov;
 
-import java.io.Serializable;
 import java.util.List;
 
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.dt.ExemplarOpsDT;

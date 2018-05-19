@@ -23,8 +23,7 @@ public interface IExemplarOps {
 	 * @param arquivodigital
 	 * @return
 	 */
-	Long addExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIdentificador,
-			byte[] arquivodigital);
+	Long addExemplar(ExemplarOpsDT exemplar);
 
 	/**
 	 * @desc Edita os atributos de um exemplar
@@ -36,8 +35,7 @@ public interface IExemplarOps {
 	 * @param arquivodigital
 	 * @return
 	 */
-	boolean editExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIdentificador,
-			byte[] arquivodigital);
+	boolean editExemplar(ExemplarOpsDT exemplar);
 
 	/**
 	 * @desc Apaga um exemplar com base do idExemplar informado
@@ -45,6 +43,20 @@ public interface IExemplarOps {
 	 * @return
 	 */
 	boolean deleteExemplar(Long idExemplar);
+
+	/**
+	 * @desc Seta o exemplar como disponivel
+	 * @param idExemplar
+	 * @return
+	 */
+	boolean setAvaliable(Long idExemplar);
+
+	/**
+	 * @desc Seta o exemplar como indisponivel
+	 * @param idExemplar
+	 * @return
+	 */
+	boolean setUnavaliable(Long idExemplar);
 
 	/**
 	 * @desc Lista todos os exemplares de determinado item

@@ -49,6 +49,33 @@ class ExemplarController {
 	}
 
 	/**
+	 * @desc Faz a adição de um exemplar
+	 * @param exemplar
+	 * @return
+	 */
+	Long addExemplar(ExemplarDT exemplar) {
+
+		IPersistenceReq req = (IPersistenceReq) this.manager.getRequiredInterface("IPersistenceReq");
+
+		return req.save(exemplar);
+
+	}
+	/**
+	 * @desc Faz a adição de um exemplar
+	 * @param exemplar
+	 * @return
+	 */
+	boolean editExemplar(ExemplarDT exemplar) {
+
+		IPersistenceReq req = (IPersistenceReq) this.manager.getRequiredInterface("IPersistenceReq");
+
+		boolean result = req.update(exemplar);
+
+		return result;
+
+	}
+
+	/**
 	 * @desc Edita os atributos de um exemplar
 	 * @param idExemplar
 	 * @param idItem
@@ -117,21 +144,22 @@ class ExemplarController {
 		exemplarDt = req.get(idExemplar);
 		return exemplarDt;
 	}
+
 	/**
 	 * 
 	 * @param idExemplar
 	 * @param tipo
 	 * @return
 	 */
-	ExemplarDT getExemplarByTipo(Long idExemplar, String tipo){
-		
+	ExemplarDT getExemplarByTipo(Long idExemplar, String tipo) {
+
 		ExemplarDT exemplarDt = new ExemplarDT();
 		exemplarDt.idExemplar = idExemplar;
 		exemplarDt.tipo = tipo;
 		IPersistenceReq req = (IPersistenceReq) this.manager.getRequiredInterface("IPersistenceReq");
 
 		exemplarDt = req.get(idExemplar, tipo);
-				
+
 		return exemplarDt;
 	}
 

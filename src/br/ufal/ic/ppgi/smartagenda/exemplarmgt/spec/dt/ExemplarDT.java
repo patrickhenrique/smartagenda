@@ -9,6 +9,10 @@ import java.io.Serializable;
  */
 public class ExemplarDT implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public Long idExemplar;
 	public Long idItem;
 	public Integer qtdExemplar;
