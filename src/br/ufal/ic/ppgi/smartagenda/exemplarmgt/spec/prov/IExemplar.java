@@ -4,6 +4,8 @@ import java.util.List;
 
 import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ExemplarDT;
 import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ItemDT;
+import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.dt.ExemplarOpsDT;
+
 /**
  * @desc Interface do Exemplar
  * 
@@ -35,7 +37,7 @@ public interface IExemplar {
 	 * @param arquivodigital
 	 * @return
 	 */
-	Boolean editExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIndentificador,
+	boolean editExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIndentificador,
 			byte[] arquivodigital);
 
 	/**
@@ -58,6 +60,14 @@ public interface IExemplar {
 	 * @return ExemplarDt
 	 */
 	ExemplarDT getExemplar(Long idExemplar);
+
+	/**
+	 * @desc Retorna um exemplar somente se ele for de determinado tipo de midia
+	 * @param idExemplar
+	 * @param tipo
+	 * @return
+	 */
+	ExemplarOpsDT getExemplarByTipo(Long idExemplar, String tipo);
 
 	/**
 	 * @desc Faz a pesquisa por meio de um exemplar fornecido e retorna uma lista de

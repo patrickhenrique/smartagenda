@@ -7,6 +7,7 @@ import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ExemplarDT;
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.dt.ExemplarOpsDT;
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.prov.IConsultarExemplar;
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.prov.IManager;
+import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.req.IExemplarOps;
 
 class ConsultarExemplar implements Serializable{
 	IManager manager;
@@ -20,7 +21,17 @@ class ConsultarExemplar implements Serializable{
 
 	}
 
+	ExemplarOpsDT getExemplar(Long idExemplar, Long idUsuario) {
 
+		ExemplarOpsDT exemplarOpsDt = new ExemplarOpsDT();
+		exemplarOpsDt.idExemplar = idExemplar;
+		IExemplarOps req = (IExemplarOps) this.manager.getProvidedInterface("IExemplarOps");
+
+		exemplarOpsDt = req.getExemplar(exemplarOpsDt.idExemplar);
+
+		return exemplarOpsDt;
+	}
+	
 	public ExemplarOpsDT consultarExemplar(String codigoIndentificador) {
 		// TODO Auto-generated method stub
 		return null;

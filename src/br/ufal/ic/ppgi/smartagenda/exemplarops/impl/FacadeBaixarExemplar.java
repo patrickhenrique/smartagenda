@@ -1,8 +1,8 @@
 package br.ufal.ic.ppgi.smartagenda.exemplarops.impl;
 
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.prov.IManager;
+import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.dt.ExemplarOpsDT;
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.prov.IBaixarExemplar;
-
 
 /**
  * @desc Classe que implementa uma interface provida
@@ -16,7 +16,7 @@ class FacadeBaixarExemplar implements IBaixarExemplar {
 	/**
 	 * @desc No construtor cria um controller para exemplar
 	 */
-	FacadeBaixarExemplar (IManager manager) {
+	FacadeBaixarExemplar(IManager manager) {
 
 		ObjectFactory factory = new ObjectFactory(manager);
 
@@ -25,37 +25,34 @@ class FacadeBaixarExemplar implements IBaixarExemplar {
 	}
 
 	@Override
-	public byte[] baixarExemplar(Long identificador) {
-	
-		return this.exemplar.baixarExemplar(identificador);
-		
+	public byte[] baixarExemplar(Long identificador, Long idUsuario) {
+
+		return this.exemplar.baixarExemplar(identificador, idUsuario);
+
 	}
 
 	@Override
-	public byte[] visualizarExemplar(Long identificador) {
+	public byte[] visualizarExemplar(Long identificador, Long idUsuario) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public byte[] reproduzirVideoExemplar(Long identificador) {
+	public byte[] reproduzirVideoExemplar(Long identificador, Long idUsuario) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public byte[] reproduzirAudioExemplar(Long identificador) {
+	public byte[] reproduzirAudioExemplar(Long identificador, Long idUsuario) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public byte[] exibirExemplar(Long identificador) {
+	public byte[] exibirExemplar(Long identificador, Long idUsuario) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	
-
 
 }

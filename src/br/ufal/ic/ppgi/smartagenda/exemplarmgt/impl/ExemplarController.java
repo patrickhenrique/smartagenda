@@ -58,7 +58,7 @@ class ExemplarController {
 	 * @param arquivodigital
 	 * @return
 	 */
-	Boolean editExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIndentificador,
+	boolean editExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIndentificador,
 			byte[] arquivodigital) {
 		ExemplarDT exemplarDt = new ExemplarDT();
 		exemplarDt.idExemplar = idExemplar;

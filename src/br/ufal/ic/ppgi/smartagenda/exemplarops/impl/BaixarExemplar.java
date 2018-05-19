@@ -8,6 +8,7 @@ import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.dt.ExemplarOpsDT;
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.prov.IBaixarExemplar;
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.prov.IManager;
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.req.IExemplarOps;
+import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.req.IUsuarioOps;
 
 class BaixarExemplar implements Serializable {
 
@@ -22,41 +23,119 @@ class BaixarExemplar implements Serializable {
 
 	}
 
-	byte[] getExemplar(Long idExemplar, String permissao, Long idUsuario) {
+	/**
+	 * 
+	 * @param idExemplar
+	 * @param idUsuario
+	 * @return
+	 */
+	public byte[] baixarExemplar(Long idExemplar, Long idUsuario) {
+		IUsuarioOps user = (IUsuarioOps) this.manager.getProvidedInterface("IUsuarioOps");
+		boolean result = user.podeBaixar(idUsuario, idExemplar);
 
+		if (result) {
+
+			ExemplarOpsDT exemplarOpsDt = new ExemplarOpsDT();
+			exemplarOpsDt.idExemplar = idExemplar;
+			IExemplarOps req = (IExemplarOps) this.manager.getProvidedInterface("IExemplarOps");
+
+			exemplarOpsDt = req.getExemplar(exemplarOpsDt.idExemplar);
+
+			return exemplarOpsDt.arquivodigital;
+		}
+		return null;
+
+	}
+
+	/**
+	 * 
+	 * @param idExemplar
+	 * @param idUsuario
+	 * @return
+	 */
+	public byte[] visualizarExemplar(Long idExemplar, Long idUsuario) {
+		IUsuarioOps user = (IUsuarioOps) this.manager.getProvidedInterface("IUsuarioOps");
+		boolean result = user.podeBaixar(idUsuario, idExemplar);
+
+		if (result) {
+
+			ExemplarOpsDT exemplarOpsDt = new ExemplarOpsDT();
+			exemplarOpsDt.idExemplar = idExemplar;
+			IExemplarOps req = (IExemplarOps) this.manager.getProvidedInterface("IExemplarOps");
+
+			exemplarOpsDt = req.getExemplar(exemplarOpsDt.idExemplar);
+
+			return exemplarOpsDt.arquivodigital;
+		}
 		return null;
 	}
 
-	// TODO ver como usar o conector na classe do componente
-	public byte[] baixarExemplar(Long identificador) {
+	/**
+	 * 
+	 * @param idExemplar
+	 * @param idUsuario
+	 * @return
+	 */
+	public byte[] reproduzirVideoExemplar(Long idExemplar, Long idUsuario) {
+		IUsuarioOps user = (IUsuarioOps) this.manager.getProvidedInterface("IUsuarioOps");
+		boolean result = user.podeBaixar(idUsuario, idExemplar);
 
-		ExemplarOpsDT exemplarOpsDt = new ExemplarOpsDT();
-		exemplarOpsDt.idExemplar = identificador;
-		IExemplarOps req = (IExemplarOps) this.manager.getProvidedInterface("IExemplarOps");
+		if (result) {
 
-		exemplarOpsDt = req.getExemplar(exemplarOpsDt.idExemplar);
+			ExemplarOpsDT exemplarOpsDt = new ExemplarOpsDT();
+			exemplarOpsDt.idExemplar = idExemplar;
+			IExemplarOps req = (IExemplarOps) this.manager.getProvidedInterface("IExemplarOps");
 
-		return exemplarOpsDt.arquivodigital;
+			exemplarOpsDt = req.getExemplar(exemplarOpsDt.idExemplar);
 
-	}
-
-	public byte[] visualizarExemplar(Long identificador) {
-		// TODO Auto-generated method stub
+			return exemplarOpsDt.arquivodigital;
+		}
 		return null;
 	}
 
-	public byte[] reproduzirVideoExemplar(Long identificador) {
-		// TODO Auto-generated method stub
+	/**
+	 * 
+	 * @param idExemplar
+	 * @param idUsuario
+	 * @return
+	 */
+	public byte[] reproduzirAudioExemplar(Long idExemplar, Long idUsuario) {
+		IUsuarioOps user = (IUsuarioOps) this.manager.getProvidedInterface("IUsuarioOps");
+		boolean result = user.podeBaixar(idUsuario, idExemplar);
+
+		if (result) {
+
+			ExemplarOpsDT exemplarOpsDt = new ExemplarOpsDT();
+			exemplarOpsDt.idExemplar = idExemplar;
+			IExemplarOps req = (IExemplarOps) this.manager.getProvidedInterface("IExemplarOps");
+
+			exemplarOpsDt = req.getExemplar(exemplarOpsDt.idExemplar);
+
+			return exemplarOpsDt.arquivodigital;
+		}
 		return null;
 	}
 
-	public byte[] reproduzirAudioExemplar(Long identificador) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	/**
+	 * 
+	 * @param idExemplar
+	 * @param idUsuario
+	 * @return
+	 */
+	public byte[] exibirExemplar(Long idExemplar, Long idUsuario) {
+		IUsuarioOps user = (IUsuarioOps) this.manager.getProvidedInterface("IUsuarioOps");
+		boolean result = user.podeBaixar(idUsuario, idExemplar);
 
-	public byte[] exibirExemplar(Long identificador) {
-		// TODO Auto-generated method stub
+		if (result) {
+
+			ExemplarOpsDT exemplarOpsDt = new ExemplarOpsDT();
+			exemplarOpsDt.idExemplar = idExemplar;
+			IExemplarOps req = (IExemplarOps) this.manager.getProvidedInterface("IExemplarOps");
+
+			exemplarOpsDt = req.getExemplar(exemplarOpsDt.idExemplar);
+
+			return exemplarOpsDt.arquivodigital;
+		}
 		return null;
 	}
 
