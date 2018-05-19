@@ -67,7 +67,7 @@ public interface IExemplar {
 	 * @param tipo
 	 * @return
 	 */
-	ExemplarOpsDT getExemplarByTipo(Long idExemplar, String tipo);
+	ExemplarDT getExemplarByTipo(Long idExemplar, String tipo);
 
 	/**
 	 * @desc Faz a pesquisa por meio de um exemplar fornecido e retorna uma lista de

@@ -83,7 +83,7 @@ class FacadeExemplarController implements IExemplar {
 	}
 
 	@Override
-	public ExemplarOpsDT getExemplarByTipo(Long idExemplar, String tipo) {
+	public ExemplarDT getExemplarByTipo(Long idExemplar, String tipo) {
 		return this.exemplarController.getExemplarByTipo(idExemplar, tipo) ;
 	}
 

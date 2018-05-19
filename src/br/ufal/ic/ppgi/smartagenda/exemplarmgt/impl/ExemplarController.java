@@ -117,6 +117,17 @@ class ExemplarController {
 		exemplarDt = req.get(idExemplar);
 		return exemplarDt;
 	}
+	
+	ExemplarDT getExemplarByTipo(Long idExemplar, String tipo){
+		
+		ExemplarDT exemplarDt = new ExemplarDT();
+		exemplarDt.idExemplar = idExemplar;
+		exemplarDt.tipo = tipo;
+		IPersistenceReq req = (IPersistenceReq) this.manager.getRequiredInterface("IPersistenceReq");
+
+		exemplarDt = req.get(idExemplar, tipo);
+		return exemplarDt;
+	}
 
 	/**
 	 * @desc Faz a pesquisa por meio de um exemplar fornecido e retorna uma lista de

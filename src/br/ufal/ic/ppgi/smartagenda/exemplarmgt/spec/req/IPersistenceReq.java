@@ -16,6 +16,8 @@ public interface IPersistenceReq {
 	public Long save(ExemplarDT exemplar);
 
 	public ExemplarDT get(Long idExemplar);
+	
+	public ExemplarDT get(Long idExemplar, String tipo);
 
 	public boolean update(ExemplarDT exemplar);
 
