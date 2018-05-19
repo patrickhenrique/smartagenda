@@ -29,16 +29,16 @@ class FacadeExemplarController implements IExemplar {
 	}
 
 	@Override
-	public Long addExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIndentificador,
+	public Long addExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIdentificador,
 			byte[] arquivodigital) {
-		return this.exemplarController.addExemplar(idExemplar, idItem, qtdExemplar, tipo, codigoIndentificador,
+		return this.exemplarController.addExemplar(idExemplar, idItem, qtdExemplar, tipo, codigoIdentificador,
 				arquivodigital);
 	}
 
 	@Override
-	public boolean editExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIndentificador,
+	public boolean editExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIdentificador,
 			byte[] arquivodigital) {
-		return this.exemplarController.editExemplar(idExemplar, idItem, qtdExemplar, tipo, codigoIndentificador, arquivodigital);
+		return this.exemplarController.editExemplar(idExemplar, idItem, qtdExemplar, tipo, codigoIdentificador, arquivodigital);
 	}
 
 	@Override

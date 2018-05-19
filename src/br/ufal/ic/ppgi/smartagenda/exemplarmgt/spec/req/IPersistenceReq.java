@@ -29,7 +29,7 @@ public interface IPersistenceReq {
 
 	public List<ExemplarDT> search(Long idItem);
 
-	public List<ExemplarDT> search(String codigoIndentificador);
+	public List<ExemplarDT> search(String codigoIdentificador);
 
 	public List<ExemplarDT> search(ItemDT item);
 

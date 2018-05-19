@@ -4,13 +4,8 @@ public class UsuarioOpsDT {
 
 	public Long idUsuario;
 
-	public enum permissao {
-		RESERVAR, BLOQUEAR, VISUALIZAR, BAIXAR
-	};
+	public String permissao;
 
-	public enum tipo {
-		PROFESSOR, BIBLIOTECARIO, ALUNO
-	};
-
+	public String tipo;
 
 }

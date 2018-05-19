@@ -28,18 +28,18 @@ class ExemplarController {
 	 * @param idItem
 	 * @param qtdExemplar
 	 * @param tipo
-	 * @param codigoIndentificador
+	 * @param codigoIdentificador
 	 * @param arquivodigital
 	 * @return
 	 */
-	Long addExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIndentificador,
+	Long addExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIdentificador,
 			byte[] arquivodigital) {
 		ExemplarDT exemplarDt = new ExemplarDT();
 		exemplarDt.idExemplar = idExemplar;
 		exemplarDt.idItem = idItem;
 		exemplarDt.qtdExemplar = qtdExemplar;
 		exemplarDt.tipo = tipo;
-		exemplarDt.codigoIndentificador = codigoIndentificador;
+		exemplarDt.codigoIdentificador = codigoIdentificador;
 		exemplarDt.arquivodigital = arquivodigital;
 
 		IPersistenceReq req = (IPersistenceReq) this.manager.getRequiredInterface("IPersistenceReq");
@@ -54,18 +54,18 @@ class ExemplarController {
 	 * @param idItem
 	 * @param qtdExemplar
 	 * @param tipo
-	 * @param codigoIndentificador
+	 * @param codigoIdentificador
 	 * @param arquivodigital
 	 * @return
 	 */
-	boolean editExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIndentificador,
+	boolean editExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIdentificador,
 			byte[] arquivodigital) {
 		ExemplarDT exemplarDt = new ExemplarDT();
 		exemplarDt.idExemplar = idExemplar;
 		exemplarDt.idItem = idItem;
 		exemplarDt.qtdExemplar = qtdExemplar;
 		exemplarDt.tipo = tipo;
-		exemplarDt.codigoIndentificador = codigoIndentificador;
+		exemplarDt.codigoIdentificador = codigoIdentificador;
 		exemplarDt.arquivodigital = arquivodigital;
 
 		IPersistenceReq req = (IPersistenceReq) this.manager.getRequiredInterface("IPersistenceReq");
@@ -117,7 +117,12 @@ class ExemplarController {
 		exemplarDt = req.get(idExemplar);
 		return exemplarDt;
 	}
-	
+	/**
+	 * 
+	 * @param idExemplar
+	 * @param tipo
+	 * @return
+	 */
 	ExemplarDT getExemplarByTipo(Long idExemplar, String tipo){
 		
 		ExemplarDT exemplarDt = new ExemplarDT();
@@ -126,6 +131,7 @@ class ExemplarController {
 		IPersistenceReq req = (IPersistenceReq) this.manager.getRequiredInterface("IPersistenceReq");
 
 		exemplarDt = req.get(idExemplar, tipo);
+				
 		return exemplarDt;
 	}
 
@@ -169,10 +175,10 @@ class ExemplarController {
 	 */
 	List<ExemplarDT> searchExemplar(String codigoIdentificador) {
 		ExemplarDT exemplarDt = new ExemplarDT();
-		exemplarDt.codigoIndentificador = codigoIdentificador;
+		exemplarDt.codigoIdentificador = codigoIdentificador;
 		IPersistenceReq req = (IPersistenceReq) this.manager.getRequiredInterface("IPersistenceReq");
 
-		List<ExemplarDT> exemplarList = req.search(exemplarDt.codigoIndentificador);
+		List<ExemplarDT> exemplarList = req.search(exemplarDt.codigoIdentificador);
 		return exemplarList;
 	}
 

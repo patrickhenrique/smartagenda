@@ -21,13 +21,15 @@ public interface IUsuarioOps {
 	 * @param idItem
 	 * @param qtdExemplar
 	 * @param tipo
-	 * @param codigoIndentificador
+	 * @param codigoIdentificador
 	 * @param arquivodigital
 	 * @return
 	 */
 	UsuarioOpsDT getUsuario(Long idUsuario);
 
 	boolean podeBaixar(Long idUsuario, Long idExemplar);
+	
+	boolean podeInteragir(Long idUsuario, Long idExemplar);
 
 	boolean podeConsultar(Long idUsuario, Long idExemplar);
 

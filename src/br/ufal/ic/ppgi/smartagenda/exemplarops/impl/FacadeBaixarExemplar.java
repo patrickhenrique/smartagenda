@@ -26,33 +26,27 @@ class FacadeBaixarExemplar implements IBaixarExemplar {
 
 	@Override
 	public byte[] baixarExemplar(Long identificador, Long idUsuario) {
-
 		return this.exemplar.baixarExemplar(identificador, idUsuario);
-
 	}
 
 	@Override
 	public byte[] visualizarExemplar(Long identificador, Long idUsuario) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.exemplar.visualizarExemplar(identificador, idUsuario);
 	}
 
 	@Override
 	public byte[] reproduzirVideoExemplar(Long identificador, Long idUsuario) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.exemplar.reproduzirVideoExemplar(identificador, idUsuario);
 	}
 
 	@Override
 	public byte[] reproduzirAudioExemplar(Long identificador, Long idUsuario) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.exemplar.reproduzirAudioExemplar(identificador, idUsuario);
 	}
 
 	@Override
 	public byte[] exibirExemplar(Long identificador, Long idUsuario) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.exemplar.exibirExemplar(identificador, idUsuario);
 	}
 
 }

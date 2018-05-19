@@ -13,7 +13,7 @@ public class ExemplarDT implements Serializable {
 	public Long idItem;
 	public Integer qtdExemplar;
 	public String tipo; // Fisico ou Digital enum
-	public String codigoIndentificador;
+	public String codigoIdentificador;
 	public byte[] arquivodigital;
 
 }

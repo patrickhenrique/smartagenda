@@ -20,11 +20,11 @@ public interface IExemplar {
 	 * @param idItem
 	 * @param qtdExemplar
 	 * @param tipo
-	 * @param codigoIndentificador
+	 * @param codigoIdentificador
 	 * @param arquivodigital
 	 * @return
 	 */
-	Long addExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIndentificador,
+	Long addExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIdentificador,
 			byte[] arquivodigital);
 
 	/**
@@ -33,11 +33,11 @@ public interface IExemplar {
 	 * @param idItem
 	 * @param qtdExemplar
 	 * @param tipo
-	 * @param codigoIndentificador
+	 * @param codigoIdentificador
 	 * @param arquivodigital
 	 * @return
 	 */
-	boolean editExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIndentificador,
+	boolean editExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIdentificador,
 			byte[] arquivodigital);
 
 	/**

@@ -9,7 +9,7 @@ public class ItemOpsDT {
 	public Long idItem;
 	public String descricaoItem;
 	public String tipo;
-	public String codigoIndentificador;
+	public String codigoIdentificador;
 
 
 }

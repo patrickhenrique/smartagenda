@@ -2,9 +2,8 @@ package br.ufal.ic.ppgi.smartagenda.exemplarops.spec.req;
 
 import java.util.List;
 
-import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ExemplarDT;
-import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ItemDT;
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.dt.ExemplarOpsDT;
+import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.dt.ItemOpsDT;
 
 /**
  * @desc Interface do ExemplarMgt para o uso das funcionalidades do Mgt
@@ -20,11 +19,11 @@ public interface IExemplarOps {
 	 * @param idItem
 	 * @param qtdExemplar
 	 * @param tipo
-	 * @param codigoIndentificador
+	 * @param codigoIdentificador
 	 * @param arquivodigital
 	 * @return
 	 */
-	Long addExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIndentificador,
+	Long addExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIdentificador,
 			byte[] arquivodigital);
 
 	/**
@@ -33,11 +32,11 @@ public interface IExemplarOps {
 	 * @param idItem
 	 * @param qtdExemplar
 	 * @param tipo
-	 * @param codigoIndentificador
+	 * @param codigoIdentificador
 	 * @param arquivodigital
 	 * @return
 	 */
-	boolean editExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIndentificador,
+	boolean editExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIdentificador,
 			byte[] arquivodigital);
 
 	/**
@@ -62,6 +61,13 @@ public interface IExemplarOps {
 	ExemplarOpsDT getExemplar(Long idExemplar);
 
 	/**
+	 * @desc Retorna um exemplar com base no codigo identificador
+	 * @param codigoIdentificador
+	 * @return
+	 */
+	ExemplarOpsDT getExemplar(String codigoIdentificador);
+
+	/**
 	 * @desc Retorna um exemplar somente se ele for de determinado tipo de midia
 	 * @param idExemplar
 	 * @param tipo
@@ -72,37 +78,37 @@ public interface IExemplarOps {
 	/**
 	 * @desc Faz a pesquisa por meio de um exemplar fornecido e retorna uma lista de
 	 *       exemplares encontrados
-	 * @param ExemplarDT
+	 * @param ExemplarOpsDT
 	 *            exemplar
-	 * @return List<ExemplarDT>
+	 * @return List<ExemplarOpsDT>
 	 */
-	List<ExemplarDT> searchExemplar(ExemplarDT exemplar);
+	List<ExemplarOpsDT> searchExemplar(ExemplarOpsDT exemplar);
 
 	/**
 	 * @desc Faz a busca de exemplares a partir de um idItem informado
 	 * @param Long
 	 *            idItem
-	 * @return List<ExemplarDT>
+	 * @return List<ExemplarOpsDT>
 	 */
-	List<ExemplarDT> searchExemplar(Long idItem);
+	List<ExemplarOpsDT> searchExemplar(Long idItem);
 
 	/**
 	 * @desc Faz a busca de exemplares a partir de um codigo identificador do
 	 *       exemplar informado
 	 * @param String
 	 *            codigoIdentificador
-	 * @return List<ExemplarDT>
+	 * @return List<ExemplarOpsDT>
 	 */
-	List<ExemplarDT> searchExemplar(String codigoIdentificador);
+	List<ExemplarOpsDT> searchExemplar(String codigoIdentificador);
 
 	/**
 	 * @desc Faz a busca de exemplares a partir de um codigo identificador do
 	 *       exemplar informado
 	 * @param ItemDT
 	 *            item
-	 * @return List<ExemplarDT>
+	 * @return List<ExemplarOpsDT>
 	 */
-	List<ExemplarDT> searchExemplar(ItemDT item);
+	List<ExemplarOpsDT> searchExemplar(ItemOpsDT item);
 
 	/**
 	 * @desc Faz a busca de exemplares a partir de um item e de um tipo de exemplar
@@ -111,7 +117,7 @@ public interface IExemplarOps {
 	 *            item
 	 * @param String
 	 *            tipo
-	 * @return List<ExemplarDT>
+	 * @return List<ExemplarOpsDT>
 	 */
-	List<ExemplarDT> searchExemplar(ItemDT item, String tipo);
+	List<ExemplarOpsDT> searchExemplar(Long idItem, String tipo);
 }

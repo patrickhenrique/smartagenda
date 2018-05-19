@@ -24,20 +24,21 @@ class BaixarExemplar implements Serializable {
 	}
 
 	/**
-	 * 
+	 * @desc Verifica no componente usuario se esse pode baixar o exemplar
+	 *       solicitado e retorna o arquivo se for autorizado a fazer o download
 	 * @param idExemplar
 	 * @param idUsuario
-	 * @return
+	 * @return byte[]
 	 */
 	public byte[] baixarExemplar(Long idExemplar, Long idUsuario) {
-		IUsuarioOps user = (IUsuarioOps) this.manager.getProvidedInterface("IUsuarioOps");
+		IUsuarioOps user = (IUsuarioOps) this.manager.getRequiredInterface("IUsuarioOps");
 		boolean result = user.podeBaixar(idUsuario, idExemplar);
 
 		if (result) {
 
 			ExemplarOpsDT exemplarOpsDt = new ExemplarOpsDT();
 			exemplarOpsDt.idExemplar = idExemplar;
-			IExemplarOps req = (IExemplarOps) this.manager.getProvidedInterface("IExemplarOps");
+			IExemplarOps req = (IExemplarOps) this.manager.getRequiredInterface("IExemplarOps");
 
 			exemplarOpsDt = req.getExemplar(exemplarOpsDt.idExemplar);
 
@@ -48,22 +49,22 @@ class BaixarExemplar implements Serializable {
 	}
 
 	/**
-	 * 
+	 * @desc Verifica se o user pode visualizar uma exemplar se for uma imagem
 	 * @param idExemplar
 	 * @param idUsuario
-	 * @return
+	 * @return byte[]
 	 */
 	public byte[] visualizarExemplar(Long idExemplar, Long idUsuario) {
-		IUsuarioOps user = (IUsuarioOps) this.manager.getProvidedInterface("IUsuarioOps");
-		boolean result = user.podeBaixar(idUsuario, idExemplar);
+		IUsuarioOps user = (IUsuarioOps) this.manager.getRequiredInterface("IUsuarioOps");
+		boolean result = user.podeInteragir(idUsuario, idExemplar);
 
 		if (result) {
 
 			ExemplarOpsDT exemplarOpsDt = new ExemplarOpsDT();
 			exemplarOpsDt.idExemplar = idExemplar;
-			IExemplarOps req = (IExemplarOps) this.manager.getProvidedInterface("IExemplarOps");
+			IExemplarOps req = (IExemplarOps) this.manager.getRequiredInterface("IExemplarOps");
 
-			exemplarOpsDt = req.getExemplar(exemplarOpsDt.idExemplar);
+			exemplarOpsDt = req.getExemplarByTipo(idExemplar, "image");
 
 			return exemplarOpsDt.arquivodigital;
 		}
@@ -71,22 +72,22 @@ class BaixarExemplar implements Serializable {
 	}
 
 	/**
-	 * 
+	 * @desc Verifica se o user pode reproduzir o exemplar se for um video
 	 * @param idExemplar
 	 * @param idUsuario
-	 * @return
+	 * @return byte[]
 	 */
 	public byte[] reproduzirVideoExemplar(Long idExemplar, Long idUsuario) {
-		IUsuarioOps user = (IUsuarioOps) this.manager.getProvidedInterface("IUsuarioOps");
-		boolean result = user.podeBaixar(idUsuario, idExemplar);
+		IUsuarioOps user = (IUsuarioOps) this.manager.getRequiredInterface("IUsuarioOps");
+		boolean result = user.podeInteragir(idUsuario, idExemplar);
 
 		if (result) {
 
 			ExemplarOpsDT exemplarOpsDt = new ExemplarOpsDT();
 			exemplarOpsDt.idExemplar = idExemplar;
-			IExemplarOps req = (IExemplarOps) this.manager.getProvidedInterface("IExemplarOps");
+			IExemplarOps req = (IExemplarOps) this.manager.getRequiredInterface("IExemplarOps");
 
-			exemplarOpsDt = req.getExemplar(exemplarOpsDt.idExemplar);
+			exemplarOpsDt = req.getExemplarByTipo(idExemplar, "video");
 
 			return exemplarOpsDt.arquivodigital;
 		}
@@ -94,22 +95,22 @@ class BaixarExemplar implements Serializable {
 	}
 
 	/**
-	 * 
+	 * @desc Verifica se o user pode ouvir um exemplar se estiver no formato audio
 	 * @param idExemplar
 	 * @param idUsuario
-	 * @return
+	 * @return byte[]
 	 */
 	public byte[] reproduzirAudioExemplar(Long idExemplar, Long idUsuario) {
-		IUsuarioOps user = (IUsuarioOps) this.manager.getProvidedInterface("IUsuarioOps");
-		boolean result = user.podeBaixar(idUsuario, idExemplar);
+		IUsuarioOps user = (IUsuarioOps) this.manager.getRequiredInterface("IUsuarioOps");
+		boolean result = user.podeInteragir(idUsuario, idExemplar);
 
 		if (result) {
 
 			ExemplarOpsDT exemplarOpsDt = new ExemplarOpsDT();
 			exemplarOpsDt.idExemplar = idExemplar;
-			IExemplarOps req = (IExemplarOps) this.manager.getProvidedInterface("IExemplarOps");
+			IExemplarOps req = (IExemplarOps) this.manager.getRequiredInterface("IExemplarOps");
 
-			exemplarOpsDt = req.getExemplar(exemplarOpsDt.idExemplar);
+			exemplarOpsDt = req.getExemplarByTipo(idExemplar, "audio");
 
 			return exemplarOpsDt.arquivodigital;
 		}
@@ -117,22 +118,23 @@ class BaixarExemplar implements Serializable {
 	}
 
 	/**
-	 * 
+	 * @desc Verifica se o user pode exibir o conteudo de um exemplar se for em
+	 *       ebook
 	 * @param idExemplar
 	 * @param idUsuario
-	 * @return
+	 * @return byte[]
 	 */
 	public byte[] exibirExemplar(Long idExemplar, Long idUsuario) {
-		IUsuarioOps user = (IUsuarioOps) this.manager.getProvidedInterface("IUsuarioOps");
-		boolean result = user.podeBaixar(idUsuario, idExemplar);
+		IUsuarioOps user = (IUsuarioOps) this.manager.getRequiredInterface("IUsuarioOps");
+		boolean result = user.podeInteragir(idUsuario, idExemplar);
 
 		if (result) {
 
 			ExemplarOpsDT exemplarOpsDt = new ExemplarOpsDT();
 			exemplarOpsDt.idExemplar = idExemplar;
-			IExemplarOps req = (IExemplarOps) this.manager.getProvidedInterface("IExemplarOps");
+			IExemplarOps req = (IExemplarOps) this.manager.getRequiredInterface("IExemplarOps");
 
-			exemplarOpsDt = req.getExemplar(exemplarOpsDt.idExemplar);
+			exemplarOpsDt = req.getExemplarByTipo(idExemplar, "ebook");
 
 			return exemplarOpsDt.arquivodigital;
 		}

@@ -14,6 +14,6 @@ public class ItemDT {
 	public Long idItem;
 	public String descricaoItem;
 	public String tipo;
-	public String codigoIndentificador;
+	public String codigoIdentificador;
 
 }

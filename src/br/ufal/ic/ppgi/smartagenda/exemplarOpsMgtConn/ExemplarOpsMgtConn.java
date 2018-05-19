@@ -6,6 +6,7 @@ import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.dt.ExemplarOpsDT;
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.prov.IConsultarExemplar;
 import br.ufal.ic.ppgi.smartagenda.exemplarmgt.impl.ComponentFactory;
 import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ExemplarDT;
+import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.dt.ItemDT;
 import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.prov.IExemplar;
 import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.prov.IManager;
 import br.ufal.ic.ppgi.smartagenda.exemplarops.spec.req.IExemplarOps;
@@ -27,7 +28,7 @@ public class ExemplarOpsMgtConn implements IExemplarOps{
 		exemplarOpsDt.idItem = exemplarDt.idItem;
 		exemplarOpsDt.qtdExemplar = exemplarDt.qtdExemplar;
 		exemplarOpsDt.tipo = exemplarDt.tipo;
-		exemplarOpsDt.codigoIndentificador = exemplarDt.codigoIndentificador;
+		exemplarOpsDt.codigoIdentificador = exemplarDt.codigoIdentificador;
 		exemplarOpsDt.arquivodigital = exemplarDt.arquivodigital;
 	
 		// TODO Auto-generated method stub
@@ -37,17 +38,16 @@ public class ExemplarOpsMgtConn implements IExemplarOps{
 
 
 	@Override
-	public Long addExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIndentificador,
+	public Long addExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIdentificador,
 			byte[] arquivodigital) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Boolean editExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIndentificador,
+	public boolean editExemplar(Long idExemplar, Long idItem, int qtdExemplar, String tipo, String codigoIdentificador,
 			byte[] arquivodigital) {
-		// TODO Auto-generated method stub
-		return null;
+		return false;
 	}
 
 	@Override
@@ -58,6 +58,44 @@ public class ExemplarOpsMgtConn implements IExemplarOps{
 
 	@Override
 	public List<ExemplarOpsDT> getListExemplarItem(Long idItem) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	@Override
+	public ExemplarOpsDT getExemplarByTipo(Long idExemplar, String tipo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ExemplarDT> searchExemplar(ExemplarDT exemplar) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ExemplarDT> searchExemplar(Long idItem) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ExemplarDT> searchExemplar(String codigoIdentificador) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ExemplarDT> searchExemplar(ItemDT item) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ExemplarDT> searchExemplar(ItemDT item, String tipo) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -19,8 +19,8 @@ public class ExemplarOpsDT {
 	public Long idExemplar;
 	public Long idItem;
 	public Integer qtdExemplar;
-	public String tipo; // Fisico ou Digital enum
-	public String codigoIndentificador;
+	public String tipo; 
+	public String codigoIdentificador;
 	public byte[] arquivodigital;
 
 
