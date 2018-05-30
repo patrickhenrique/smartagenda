@@ -1,5 +1,6 @@
 package br.ufal.ic.ppgi.smartagenda.UsuarioOps.impl;
 
+<<<<<<< HEAD
 import java.util.HashMap;
 import java.util.Set;
 
@@ -81,4 +82,20 @@ class Manager implements IManager {
 	public Object getRequiredInterface(String interfaceName) {
 		return this.requiredInterfaces.get(interfaceName);
 	}
+=======
+import br.ufal.ic.ppgi.smartagenda.UsuarioOps.spec.prov.IManager;
+
+class Manager {
+	private Manager manager;
+	
+	void ClassManager(Manager mgr){
+		this.manager = mgr;
+	}
+	
+	public void Testar (String msg){
+		System.out.println("Mensagem: " +msg);
+	}
+	
+	
+>>>>>>> branch 'usuarioops' of https://github.com/patrickhenrique/smartagenda.git
 }
