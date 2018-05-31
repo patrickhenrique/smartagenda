@@ -2,7 +2,7 @@ package br.ufal.ic.ppgi.smartagenda.UsuarioOps.impl;
 
 <<<<<<< HEAD
 
-import br.ufal.ic.ppgi.smartagenda.exemplarmgt.spec.prov.IManager;
+import br.ufal.ic.ppgi.smartagenda.usuariomgt.spec.prov.IManager;
 /**
  * Responsável pela instanciação do componente
  * @author Glevson
