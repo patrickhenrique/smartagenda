@@ -20,10 +20,10 @@ public interface IManager {
 	
 	public static class Interfaces {
 		public enum Provided {
-			
+			ICancelarReservaOps, IReservarItemOps
 		}		
 		public enum Required {
-			IReservaMgt
+			IReqNegocio, IReqSistema
 		}
 	}
 

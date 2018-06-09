@@ -16,11 +16,13 @@ public class Manager implements IManager{
 	public Manager() {
 		//REQUIRED INTERFACES
 		this.requiredInterface = new HashMap<>();		
-		this.requiredInterface.put(Required.IReservaMgt.name(), null);
+		this.requiredInterface.put(Required.IReqNegocio.name(), null);
+		this.requiredInterface.put(Required.IReqSistema.name(), null);
 		
 		//PROVIDED INTERFACES
-		this.provideInterface = new HashMap<>();		
-		
+		this.provideInterface = new HashMap<>();
+		this.provideInterface.put(Provided.ICancelarReservaOps.name(), new FacadeCancelarReservaOps(this));
+		this.provideInterface.put(Provided.IReservarItemOps.name(), new FacadeReservarItemOps(this));
 	}
 	
 	public Set<String> getProvidedInterfaces() {
