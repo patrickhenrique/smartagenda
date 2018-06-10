@@ -12,15 +12,20 @@ public interface IReqNegocio {
 	public Reserva criarReserva(Item item, Usuario usuario) throws Exception ;
 	
 	// Recuperar reservas
-	public Reserva recuperarReserva(Reserva reserva) throws Exception;
-	public Reserva recuperarReserva(Item item, Usuario usuario) throws Exception;
-	public List<Reserva> recuperarReservas(Item item);
+	public Reserva recuperarReserva(int codReserva) throws Exception;
+	public Reserva recuperarReserva(int codItem, int codUsuario) throws Exception;
+	public List<Reserva> recuperarReservas(int codItem);
+	public Boolean existeReservaAtiva(int codReserva);
 	
 	//Verificar se o item está disponível.
+	
 	public Boolean existeReservaAtiva(Item item);
 	public Boolean existeReservaAtiva(Item item, Usuario usuario);
 	
 	//Finalizar reserva	 
 	public Reserva cancelarReserva(Reserva reserva);
 	public Reserva finalizarReserva(Reserva reserva);
+	
+	public Boolean existeItem(int codItem);
+	public Item recuperarItem(int codItem);
 }
