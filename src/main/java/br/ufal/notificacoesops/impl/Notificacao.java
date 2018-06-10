@@ -1,4 +1,4 @@
-package br.ufal.notificacoes.impl;
+package br.ufal.notificacoesops.impl;
 
 import br.ufal.notificacoesops.spec.prov.INotificacaoMgt;
 

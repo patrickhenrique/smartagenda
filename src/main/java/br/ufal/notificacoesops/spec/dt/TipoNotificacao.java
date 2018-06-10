@@ -1,4 +1,4 @@
-package br.ufal.notificacoes.spec.dt;
+package br.ufal.notificacoesops.spec.dt;
 
 public enum TipoNotificacao {
 	

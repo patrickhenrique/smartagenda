@@ -1,9 +1,10 @@
-package br.ufal.notificacoes.spec.dt;
+package br.ufal.notificacoesops.spec.dt;
 
-public class Usuario {
+public class Item {
 	
 	public long id;
 	public String nome;
+	public String descricao;
 	
 	public long getId() {
 		return id;
@@ -16,6 +17,12 @@ public class Usuario {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 	
 	
