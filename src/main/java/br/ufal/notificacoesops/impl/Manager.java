@@ -20,7 +20,8 @@ class Manager implements IManager {
 		
 		//atribuição de interfaces requeridas
 		this.requiredInterfaces.put("IReservaOps", null);
-		this.requiredInterfaces.put("INotificacaoMgt", null);
+		this.requiredInterfaces.put("IEmprestimoOps", null);
+		this.requiredInterfaces.put("INotificacaoMgt", null);		
 	}
 	
 
