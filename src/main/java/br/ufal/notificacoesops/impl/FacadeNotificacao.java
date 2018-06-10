@@ -1,5 +1,8 @@
 package br.ufal.notificacoesops.impl;
 
+import br.ufal.notificacoesops.spec.dt.EmprestimoDT;
+import br.ufal.notificacoesops.spec.dt.ReservaDT;
+import br.ufal.notificacoesops.spec.dt.UsuarioDT;
 import br.ufal.notificacoesops.spec.prov.IManager;
 import br.ufal.notificacoesops.spec.prov.INotificacaoOps;
 
@@ -17,21 +20,21 @@ class FacadeNotificacao implements INotificacaoOps{
 	}
 
 
-	public void notificar() {
+	public void notificar(UsuarioDT usuario) {
 		
 		this.notificacao.enviarNotificacao(null);
 		
 	}
 	
-	public void notificarReserva() {
+	public void notificarReserva(UsuarioDT usuario, ReservaDT reserva) {
 		
 	}
 	
-	public void notificarCancelamentoReserva() {
+	public void notificarCancelamentoReserva(UsuarioDT usuario, ReservaDT reserva) {
 		
 	}
 	
-	public void notificarEmprestimo() {
+	public void notificarEmprestimo(UsuarioDT usuario, EmprestimoDT emprestimo) {
 		
 	}
 
@@ -40,6 +43,7 @@ class FacadeNotificacao implements INotificacaoOps{
 		// TODO Auto-generated method stub
 		return false;
 	}
+
 	
 	
 
