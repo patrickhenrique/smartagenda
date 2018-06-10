@@ -1,5 +1,9 @@
 package br.ufal.notificacoesops.impl;
 
+import br.ufal.notificacoesops.impl.tipoNotificacao.NotificarPorEmail;
+import br.ufal.notificacoesops.impl.tipoNotificacao.NotificarPorFacebook;
+import br.ufal.notificacoesops.impl.tipoNotificacao.NotificarPorSMS;
+import br.ufal.notificacoesops.impl.tipoNotificacao.NotificarPorWhatsApp;
 import br.ufal.notificacoesops.spec.dt.NotificacaoDT;
 import br.ufal.notificacoesops.spec.dt.UsuarioDT;
 
@@ -27,6 +31,8 @@ class Notificacao{
 			tipoNotificacao = new NotificarPorFacebook();
 			tipoNotificacao.notificar(usuario, contNotificacao);
 		}	
+		
+		//TODO salvar notificação
 				
 		
 	}

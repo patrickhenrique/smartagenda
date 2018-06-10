@@ -17,8 +17,7 @@ class FacadeNotificacao implements INotificacaoOps{
 	
 	
 	public FacadeNotificacao(IManager manager) {
-		this.manager = manager;
-		
+		this.manager = manager;		
 		this.notificacao = new Notificacao();
 	}
 
@@ -29,19 +28,24 @@ class FacadeNotificacao implements INotificacaoOps{
 		this.notificacao.enviarNotificacao(usuario, reserva);
 	}
 	
-	public void notificarCancelamentoReserva(UsuarioDT usuario, ReservaDT reserva) {
+	public void notificarCancelamentoReserva(UsuarioDT usuario) {
+		this.resReq = (IReservaOps)this.manager.getRequiredInterface("IReservaOps");
+		ReservaDT reserva = this.resReq.obterReserva(usuario);
+		
+		if(reserva.cancelada) {
+			this.notificacao.enviarNotificacao(usuario, reserva);
+		}		
 		
 	}
 	
-	public void notificarEmprestimo(UsuarioDT usuario, EmprestimoDT emprestimo) {
-		
+	public void notificarEmprestimo(UsuarioDT usuario) {
+		this.empReq = (IEmprestimoOps)this.manager.getRequiredInterface("IEmprestimoOps");
+		EmprestimoDT emprestimo = this.empReq.obterEmprestimo(usuario);
+		this.notificacao.enviarNotificacao(usuario, emprestimo);
 	}
 
 
-	public boolean isNotificado() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 
 
 	

@@ -1,7 +1,8 @@
-package br.ufal.notificacoesops.impl;
+package br.ufal.notificacoesops.impl.tipoNotificacao;
 
 
 
+import br.ufal.notificacoesops.impl.TipoNotificacao;
 import br.ufal.notificacoesops.spec.dt.UsuarioDT;
 import co.aurasphere.botmill.core.annotation.Bot;
 import co.aurasphere.botmill.fb.FbBot;

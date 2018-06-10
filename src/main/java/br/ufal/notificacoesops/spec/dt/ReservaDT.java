@@ -9,6 +9,7 @@ public class ReservaDT {
 	public UsuarioDT usuario;
 	public Date dataReserva;
 	public ItemDT itemReserva;
+	public boolean cancelada;
 	
 	
 }
