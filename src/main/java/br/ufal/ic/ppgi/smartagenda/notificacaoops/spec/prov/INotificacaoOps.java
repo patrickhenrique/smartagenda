@@ -1,6 +1,6 @@
-package br.ufal.notificacoesops.spec.prov;
+package br.ufal.ic.ppgi.smartagenda.notificacaoops.spec.prov;
 
-import br.ufal.notificacoesops.spec.dt.UsuarioDT;
+import br.ufal.ic.ppgi.smartagenda.notificacaoops.spec.dt.UsuarioDT;
 
 public interface INotificacaoOps {
 	

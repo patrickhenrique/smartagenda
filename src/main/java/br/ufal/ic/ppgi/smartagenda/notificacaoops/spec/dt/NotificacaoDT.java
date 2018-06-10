@@ -1,4 +1,4 @@
-package br.ufal.notificacoesops.spec.dt;
+package br.ufal.ic.ppgi.smartagenda.notificacaoops.spec.dt;
 
 import java.util.Date;
 

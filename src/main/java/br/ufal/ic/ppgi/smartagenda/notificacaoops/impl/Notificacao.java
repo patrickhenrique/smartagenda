@@ -1,10 +1,10 @@
-package br.ufal.notificacoesops.impl;
+package br.ufal.ic.ppgi.smartagenda.notificacaoops.impl;
 
-import br.ufal.notificacoesops.impl.tipoNotificacao.NotificarPorEmail;
-import br.ufal.notificacoesops.impl.tipoNotificacao.NotificarPorFacebook;
-import br.ufal.notificacoesops.impl.tipoNotificacao.NotificarPorSMS;
-import br.ufal.notificacoesops.impl.tipoNotificacao.NotificarPorWhatsApp;
-import br.ufal.notificacoesops.spec.dt.UsuarioDT;
+import br.ufal.ic.ppgi.smartagenda.notificacaoops.impl.tipoNotificacao.NotificarPorEmail;
+import br.ufal.ic.ppgi.smartagenda.notificacaoops.impl.tipoNotificacao.NotificarPorFacebook;
+import br.ufal.ic.ppgi.smartagenda.notificacaoops.impl.tipoNotificacao.NotificarPorSMS;
+import br.ufal.ic.ppgi.smartagenda.notificacaoops.impl.tipoNotificacao.NotificarPorWhatsApp;
+import br.ufal.ic.ppgi.smartagenda.notificacaoops.spec.dt.UsuarioDT;
 
 class Notificacao{
 

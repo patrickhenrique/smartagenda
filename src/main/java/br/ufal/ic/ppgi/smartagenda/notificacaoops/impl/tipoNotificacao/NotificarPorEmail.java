@@ -1,4 +1,4 @@
-package br.ufal.notificacoesops.impl.tipoNotificacao;
+package br.ufal.ic.ppgi.smartagenda.notificacaoops.impl.tipoNotificacao;
 
 import java.security.Security;
 import java.util.Date;
@@ -11,8 +11,8 @@ import javax.mail.internet.MimeMessage;
 
 import com.sun.mail.smtp.SMTPTransport;
 
-import br.ufal.notificacoesops.impl.TipoNotificacao;
-import br.ufal.notificacoesops.spec.dt.UsuarioDT;
+import br.ufal.ic.ppgi.smartagenda.notificacaoops.impl.TipoNotificacao;
+import br.ufal.ic.ppgi.smartagenda.notificacaoops.spec.dt.UsuarioDT;
 
 public class NotificarPorEmail implements TipoNotificacao {
 

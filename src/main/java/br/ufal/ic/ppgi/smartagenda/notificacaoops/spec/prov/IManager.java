@@ -1,4 +1,4 @@
-package br.ufal.notificacoesops.spec.prov;
+package br.ufal.ic.ppgi.smartagenda.notificacaoops.spec.prov;
 
 import java.util.Set;
 

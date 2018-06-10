@@ -1,16 +1,16 @@
-package br.ufal.notificacoesops.impl;
+package br.ufal.ic.ppgi.smartagenda.notificacaoops.impl;
 
 import java.util.Date;
 
-import br.ufal.notificacoesops.spec.dt.EmprestimoDT;
-import br.ufal.notificacoesops.spec.dt.NotificacaoDT;
-import br.ufal.notificacoesops.spec.dt.ReservaDT;
-import br.ufal.notificacoesops.spec.dt.UsuarioDT;
-import br.ufal.notificacoesops.spec.prov.IManager;
-import br.ufal.notificacoesops.spec.prov.INotificacaoOps;
-import br.ufal.notificacoesops.spec.req.IEmprestimoOps;
-import br.ufal.notificacoesops.spec.req.INotificacaoMgt;
-import br.ufal.notificacoesops.spec.req.IReservaOps;
+import br.ufal.ic.ppgi.smartagenda.notificacaoops.spec.dt.EmprestimoDT;
+import br.ufal.ic.ppgi.smartagenda.notificacaoops.spec.dt.NotificacaoDT;
+import br.ufal.ic.ppgi.smartagenda.notificacaoops.spec.dt.ReservaDT;
+import br.ufal.ic.ppgi.smartagenda.notificacaoops.spec.dt.UsuarioDT;
+import br.ufal.ic.ppgi.smartagenda.notificacaoops.spec.prov.IManager;
+import br.ufal.ic.ppgi.smartagenda.notificacaoops.spec.prov.INotificacaoOps;
+import br.ufal.ic.ppgi.smartagenda.notificacaoops.spec.req.IEmprestimoOps;
+import br.ufal.ic.ppgi.smartagenda.notificacaoops.spec.req.INotificacaoMgt;
+import br.ufal.ic.ppgi.smartagenda.notificacaoops.spec.req.IReservaOps;
 
 class FacadeNotificacao implements INotificacaoOps{
 

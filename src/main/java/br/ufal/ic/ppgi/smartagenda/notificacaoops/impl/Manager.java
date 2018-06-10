@@ -1,9 +1,9 @@
-package br.ufal.notificacoesops.impl;
+package br.ufal.ic.ppgi.smartagenda.notificacaoops.impl;
 
 import java.util.HashMap;
 import java.util.Set;
 
-import br.ufal.notificacoesops.spec.prov.IManager;
+import br.ufal.ic.ppgi.smartagenda.notificacaoops.spec.prov.IManager;
 
 class Manager implements IManager {
 

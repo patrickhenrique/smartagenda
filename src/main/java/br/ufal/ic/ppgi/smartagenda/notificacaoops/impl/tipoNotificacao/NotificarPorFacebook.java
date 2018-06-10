@@ -1,9 +1,9 @@
-package br.ufal.notificacoesops.impl.tipoNotificacao;
+package br.ufal.ic.ppgi.smartagenda.notificacaoops.impl.tipoNotificacao;
 
 
 
-import br.ufal.notificacoesops.impl.TipoNotificacao;
-import br.ufal.notificacoesops.spec.dt.UsuarioDT;
+import br.ufal.ic.ppgi.smartagenda.notificacaoops.impl.TipoNotificacao;
+import br.ufal.ic.ppgi.smartagenda.notificacaoops.spec.dt.UsuarioDT;
 import co.aurasphere.botmill.core.annotation.Bot;
 import co.aurasphere.botmill.fb.FbBot;
 import co.aurasphere.botmill.fb.autoreply.MessageAutoReply;
