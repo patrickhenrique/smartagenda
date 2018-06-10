@@ -1,76 +1,51 @@
 package br.ufal.ic.ppgi.smartagenda.notificacaomgt.impl;
 
 import java.util.Date;
+import java.util.List;
 
 import br.ufal.ic.ppgi.smartagenda.notificacaomgt.spec.dt.NotificacaoDT;
+import br.ufal.ic.ppgi.smartagenda.notificacaomgt.spec.dt.UsuarioDT;
 import br.ufal.ic.ppgi.smartagenda.notificacaomgt.spec.prov.IManager;
 import br.ufal.ic.ppgi.smartagenda.notificacaomgt.spec.prov.INotificacaoMgt;
-import br.ufal.ic.ppgi.smartagenda.notificacaomgt.spec.req.IEmprestimoOps;
-import br.ufal.ic.ppgi.smartagenda.notificacaomgt.spec.req.IReservaOps;
 
 class FacadeNotificacaoMgt implements INotificacaoMgt{
 
-	private NotificacaoDAO notificacao;
-	private IManager manager;
-	private IReservaOps resReq;
-	private IEmprestimoOps empReq;
-	
+	private NotificacaoDAO notificacaoDAO;
+	private IManager manager;	
 	
 	public FacadeNotificacaoMgt(IManager manager) {
-		this.manager = manager;		
-		this.notificacao = new NotificacaoDAO();
+		this.manager = manager;
+		this.notificacaoDAO = new NotificacaoDAO();
+	}	
+	
+	@Override
+	public void save(NotificacaoDT notificacao) {
+		this.notificacaoDAO.save(notificacao);		
 	}
 
 
-	/**
-	 * Notifica a reserva criada pelo usuário
-	 */
-	public void notificarReserva(UsuarioDT usuario) {
-		this.resReq = (IReservaOps)this.manager.getRequiredInterface("IReservaOps");
-		ReservaDT reserva = this.resReq.obterReserva(usuario);
-		
-		if(!reserva.cancelada) {
-			this.notificacao.enviarNotificacao(usuario, reserva);
-			salvarRegistroNotificacao(usuario, reserva);
-		}	
+	@Override
+	public void update(NotificacaoDT notificacao) {
+		this.notificacaoDAO.update(notificacao);		
 	}
-	
-	/**
-	 * Notifica o cancelamento feito pelo usuário
-	 */
-	public void notificarCancelamentoReserva(UsuarioDT usuario) {
-		this.resReq = (IReservaOps)this.manager.getRequiredInterface("IReservaOps");
-		ReservaDT reserva = this.resReq.obterReserva(usuario);
-		
-		if(reserva.cancelada) {
-			this.notificacao.enviarNotificacao(usuario, reserva);
-			salvarRegistroNotificacao(usuario, reserva);
-		}		
+
+
+	@Override
+	public List<NotificacaoDT> findAll(){
+		return this.notificacaoDAO.findAll();		
+	}
+
+
+	@Override
+	public NotificacaoDT findById(Long id) {
+		return this.notificacaoDAO.findById(id);
 		
 	}
-	
-	/**
-	 * Notifica o empréstimo feito pelo usuário
-	 */
-	public void notificarEmprestimo(UsuarioDT usuario) {
-		this.empReq = (IEmprestimoOps)this.manager.getRequiredInterface("IEmprestimoOps");
-		EmprestimoDT emprestimo = this.empReq.obterEmprestimo(usuario);
-		this.notificacao.enviarNotificacao(usuario, emprestimo);
-		salvarRegistroNotificacao(usuario, emprestimo);
-	}
-	
-	/**
-	 * salvar notificação
-	 * @param usuario
-	 */
-	private void salvarRegistroNotificacao(UsuarioDT usuario, Object contNotificacao) {		
-		NotificacaoDT notificacao = new NotificacaoDT();
-		notificacao.dataNotificacao = new Date();
-		notificacao.usuario = usuario;
-		notificacao.mensagemNotificacao = contNotificacao.toString();
-		
-		INotificacaoMgt notificacaoMgt = (INotificacaoMgt)this.manager.getRequiredInterface("INotificacaoMgt");
-		notificacaoMgt.salvarNotificacao(notificacao);
+
+
+	@Override
+	public List<NotificacaoDT> findByUsuario(UsuarioDT usuario) {
+		return this.notificacaoDAO.findByUsuario(usuario);		
 	}
 
 

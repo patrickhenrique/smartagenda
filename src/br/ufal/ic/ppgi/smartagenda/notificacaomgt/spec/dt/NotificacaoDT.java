@@ -6,8 +6,7 @@ public class NotificacaoDT {
 		
 	public long id;
 	public Date dataNotificacao;
-	public UsuarioDT usuario;
-	public TipoNotificacaoDT tipoNotificacao;
+	public UsuarioDT usuario;	
 	public String mensagemNotificacao;
 	public ItemDT item;
 	

@@ -16,12 +16,8 @@ class Manager implements IManager {
 		this.requiredInterfaces = new HashMap<String, Object>();
 
 		//atribuição de interfaces providas
-		this.providedInterfaces.put("INotificacaoOps", new FacadeNotificacaoMgt(this));
-		
-		//atribuição de interfaces requeridas
-		this.requiredInterfaces.put("IReservaOps", null);
-		this.requiredInterfaces.put("IEmprestimoOps", null);
-		this.requiredInterfaces.put("INotificacaoMgt", null);		
+		this.providedInterfaces.put("INotificacaoMgt", new FacadeNotificacaoMgt(this));
+					
 	}
 	
 
