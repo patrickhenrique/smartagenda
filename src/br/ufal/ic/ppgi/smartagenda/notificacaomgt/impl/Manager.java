@@ -1,9 +1,9 @@
-package br.ufal.notificacaoMgt.impl;
+package br.ufal.ic.ppgi.smartagenda.notificacaomgt.impl;
 
 import java.util.HashMap;
 import java.util.Set;
 
-import br.ufal.notificacoesops.spec.prov.IManager;
+import br.ufal.ic.ppgi.smartagenda.notificacaomgt.spec.prov.IManager;
 
 class Manager implements IManager {
 
@@ -16,7 +16,7 @@ class Manager implements IManager {
 		this.requiredInterfaces = new HashMap<String, Object>();
 
 		//atribuição de interfaces providas
-		this.providedInterfaces.put("INotificacaoOps", new FacadeNotificacao(this));
+		this.providedInterfaces.put("INotificacaoOps", new FacadeNotificacaoMgt(this));
 		
 		//atribuição de interfaces requeridas
 		this.requiredInterfaces.put("IReservaOps", null);

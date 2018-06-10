@@ -1,6 +1,6 @@
-package br.ufal.notificacaoMgt.impl;
+package br.ufal.ic.ppgi.smartagenda.notificacaomgt.impl;
 
-import br.ufal.notificacoesops.spec.prov.IManager;
+import br.ufal.ic.ppgi.smartagenda.notificacaomgt.spec.prov.IManager;
 
 public class ComponentFactory {
 	private static IManager manager = null;

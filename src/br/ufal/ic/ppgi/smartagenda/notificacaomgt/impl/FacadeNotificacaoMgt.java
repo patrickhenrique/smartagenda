@@ -1,28 +1,24 @@
-package br.ufal.notificacaoMgt.impl;
+package br.ufal.ic.ppgi.smartagenda.notificacaomgt.impl;
 
 import java.util.Date;
 
-import br.ufal.notificacoesops.spec.dt.EmprestimoDT;
-import br.ufal.notificacoesops.spec.dt.NotificacaoDT;
-import br.ufal.notificacoesops.spec.dt.ReservaDT;
-import br.ufal.notificacoesops.spec.dt.UsuarioDT;
-import br.ufal.notificacoesops.spec.prov.IManager;
-import br.ufal.notificacoesops.spec.prov.INotificacaoOps;
-import br.ufal.notificacoesops.spec.req.IEmprestimoOps;
-import br.ufal.notificacoesops.spec.req.INotificacaoMgt;
-import br.ufal.notificacoesops.spec.req.IReservaOps;
+import br.ufal.ic.ppgi.smartagenda.notificacaomgt.spec.dt.NotificacaoDT;
+import br.ufal.ic.ppgi.smartagenda.notificacaomgt.spec.prov.IManager;
+import br.ufal.ic.ppgi.smartagenda.notificacaomgt.spec.prov.INotificacaoMgt;
+import br.ufal.ic.ppgi.smartagenda.notificacaomgt.spec.req.IEmprestimoOps;
+import br.ufal.ic.ppgi.smartagenda.notificacaomgt.spec.req.IReservaOps;
 
-class FacadeNotificacao implements INotificacaoOps{
+class FacadeNotificacaoMgt implements INotificacaoMgt{
 
-	private Notificacao notificacao;
+	private NotificacaoDAO notificacao;
 	private IManager manager;
 	private IReservaOps resReq;
 	private IEmprestimoOps empReq;
 	
 	
-	public FacadeNotificacao(IManager manager) {
+	public FacadeNotificacaoMgt(IManager manager) {
 		this.manager = manager;		
-		this.notificacao = new Notificacao();
+		this.notificacao = new NotificacaoDAO();
 	}
 
 
