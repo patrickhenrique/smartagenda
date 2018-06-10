@@ -4,7 +4,7 @@ public class Notificacao {
 	
 	
 	private long id;
-	private Usuario usuario;
+	private UsuarioDT usuario;
 	private TipoNotificacao tipoNotificacao;
 	private String mensagemNotificacao;
 	private Item item;
@@ -15,10 +15,10 @@ public class Notificacao {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public Usuario getUsuario() {
+	public UsuarioDT getUsuario() {
 		return usuario;
 	}
-	public void setUsuario(Usuario usuario) {
+	public void setUsuario(UsuarioDT usuario) {
 		this.usuario = usuario;
 	}
 	public TipoNotificacao getTipoNotificacao() {
