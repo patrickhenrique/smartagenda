@@ -4,6 +4,6 @@ import br.ufal.notificacoesops.spec.dt.UsuarioDT;
 
 public interface TipoNotificacao {
 
-	public void notificar(UsuarioDT usuario);	
+	public void notificar(UsuarioDT usuario, Object objTpNotificacao);	
 	
 }

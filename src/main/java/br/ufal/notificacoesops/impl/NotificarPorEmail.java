@@ -15,7 +15,7 @@ import br.ufal.notificacoesops.spec.dt.UsuarioDT;
 
 public class NotificarPorEmail implements TipoNotificacao {
 
-	public void notificar(UsuarioDT usuario) {
+	public void notificar(UsuarioDT usuario, Object contNotificacao) {
 		Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider());
 		final String SSL_FACTORY = "javax.net.ssl.SSLSocketFactory";
 

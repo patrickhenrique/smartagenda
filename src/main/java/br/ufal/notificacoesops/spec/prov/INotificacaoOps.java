@@ -6,11 +6,9 @@ import br.ufal.notificacoesops.spec.dt.UsuarioDT;
 
 public interface INotificacaoOps {
 	
-	public void notificar();
-	
 	public boolean isNotificado();
 	
-	public void notificarReserva(UsuarioDT usuario, ReservaDT reserva);
+	public void notificarReserva(UsuarioDT usuario);
 	
 	public void notificarCancelamentoReserva(UsuarioDT usuario, ReservaDT reserva);
 	

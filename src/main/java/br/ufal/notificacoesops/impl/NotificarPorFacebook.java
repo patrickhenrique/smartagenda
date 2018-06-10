@@ -15,7 +15,7 @@ public class NotificarPorFacebook extends FbBot implements TipoNotificacao{
 
   
     @FbBotMillController(eventType=FbBotMillEventType.MESSAGE, text="Hi",caseSensitive = true)
-    public void notificar(UsuarioDT usuario) {
+    public void notificar(UsuarioDT usuario, Object contNotificacao) {
     	reply(new MessageAutoReply("Envio de notificação ao usuário"));
 		
 	}

@@ -25,7 +25,7 @@ public class NotificarPorFacebookCFG extends FbBotConfiguration implements TipoN
 
 	
 	
-	public void notificar(UsuarioDT usuario) {
+	public void notificar(UsuarioDT usuario, Object contNotificacao) {
 		
 		 MessengerProfileApi.setGetStartedButton("get_started");
 	        MessengerProfileApi.setGreetingMessage("Hello!");

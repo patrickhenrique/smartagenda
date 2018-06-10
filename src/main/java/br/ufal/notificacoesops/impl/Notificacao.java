@@ -8,20 +8,26 @@ class Notificacao{
 	private NotificacaoDT dadosNotificacao;
 	private TipoNotificacao tipoNotificacao;
 	
-	public void enviarNotificacao(UsuarioDT usuario) {
+	public void enviarNotificacao(UsuarioDT usuario, Object contNotificacao) {
 		
-		tipoNotificacao = new NotificarPorEmail();
-		tipoNotificacao.notificar(usuario);
+		if(usuario.email!=null) {
+			tipoNotificacao = new NotificarPorEmail();
+			tipoNotificacao.notificar(usuario, contNotificacao);
+		}	
 		
-		tipoNotificacao = new NotificarPorSMS();
-		tipoNotificacao.notificar(usuario);
+		if(usuario.nuTelefone!=null) {
+			tipoNotificacao = new NotificarPorSMS();
+			tipoNotificacao.notificar(usuario, contNotificacao);
+			
+			tipoNotificacao = new NotificarPorWhatsApp();
+			tipoNotificacao.notificar(usuario, contNotificacao);
+		}	
 		
-		tipoNotificacao = new NotificarPorFacebook();
-		tipoNotificacao.notificar(usuario);
-		
-		tipoNotificacao = new NotificarPorWhatsApp();
-		tipoNotificacao.notificar(usuario);		
-		
+		if(usuario.idFacebook!=null) {
+			tipoNotificacao = new NotificarPorFacebook();
+			tipoNotificacao.notificar(usuario, contNotificacao);
+		}	
+				
 		
 	}
 	

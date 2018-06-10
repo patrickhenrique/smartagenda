@@ -5,12 +5,15 @@ import br.ufal.notificacoesops.spec.dt.ReservaDT;
 import br.ufal.notificacoesops.spec.dt.UsuarioDT;
 import br.ufal.notificacoesops.spec.prov.IManager;
 import br.ufal.notificacoesops.spec.prov.INotificacaoOps;
+import br.ufal.notificacoesops.spec.req.IEmprestimoOps;
+import br.ufal.notificacoesops.spec.req.IReservaOps;
 
 class FacadeNotificacao implements INotificacaoOps{
 
 	private Notificacao notificacao;
 	private IManager manager;
-	//private ILimiteOps intReq;
+	private IReservaOps resReq;
+	private IEmprestimoOps empReq;
 	
 	
 	public FacadeNotificacao(IManager manager) {
@@ -20,14 +23,10 @@ class FacadeNotificacao implements INotificacaoOps{
 	}
 
 
-	public void notificar(UsuarioDT usuario) {
-		
-		this.notificacao.enviarNotificacao(null);
-		
-	}
-	
-	public void notificarReserva(UsuarioDT usuario, ReservaDT reserva) {
-		
+	public void notificarReserva(UsuarioDT usuario) {
+		this.resReq = (IReservaOps)this.manager.getRequiredInterface("IReservaOps");
+		ReservaDT reserva = this.resReq.obterReserva(usuario);
+		this.notificacao.enviarNotificacao(usuario, reserva);
 	}
 	
 	public void notificarCancelamentoReserva(UsuarioDT usuario, ReservaDT reserva) {
@@ -44,7 +43,7 @@ class FacadeNotificacao implements INotificacaoOps{
 		return false;
 	}
 
-	
+
 	
 
 }
