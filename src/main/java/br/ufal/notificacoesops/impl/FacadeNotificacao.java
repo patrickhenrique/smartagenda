@@ -19,7 +19,7 @@ class FacadeNotificacao implements INotificacaoOps{
 
 	public void notificar() {
 		
-		this.notificacao.enviarNotificacao();
+		this.notificacao.enviarNotificacao(null);
 		
 	}
 

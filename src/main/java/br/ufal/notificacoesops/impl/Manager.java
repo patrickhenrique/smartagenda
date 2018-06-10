@@ -1,7 +1,6 @@
 package br.ufal.notificacoesops.impl;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Set;
 
 import br.ufal.notificacoesops.spec.prov.IManager;
@@ -13,15 +12,15 @@ class Manager implements IManager {
 	
 	//CONSTRUCTOR
 	Manager() {
-		this.providedInterfaces = new HashMap();
-		this.requiredInterfaces = new HashMap();
+		this.providedInterfaces = new HashMap<String, Object>();
+		this.requiredInterfaces = new HashMap<String, Object>();
 
 		//atribuição de interfaces providas
 		this.providedInterfaces.put("INotificacaoOps", new FacadeNotificacao(this));
 		
-		//TODO
 		//atribuição de interfaces requeridas
-		this.requiredInterfaces.put("ILimiteOps", null);
+		this.requiredInterfaces.put("IReservaOps", null);
+		this.requiredInterfaces.put("INotificacaoMgt", null);
 	}
 	
 
