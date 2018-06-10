@@ -8,30 +8,16 @@ class FacadeNotificacao implements INotificacaoOps{
 	private IManager manager;
 	//private ILimiteOps intReq;
 	
-	
-	public FacadeNotificacao(IManager manager) {
-		this.manager = manager;
-	}
-	
-		
-	public void notificarPorSMS() {
+
+	public void notificar() {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void notificarPorWhattsApp() {
-		// TODO Auto-generated method stub
-		
-	}
 
-	public void notificarPorFacebook() {
+	public boolean isNotificado() {
 		// TODO Auto-generated method stub
-		
-	}
-
-	public void notificarPorEmail() {
-		// TODO Auto-generated method stub
-		
+		return false;
 	}
 	
 	
