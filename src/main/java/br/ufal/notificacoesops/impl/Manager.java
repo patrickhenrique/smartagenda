@@ -1,39 +1,50 @@
 package br.ufal.notificacoesops.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 import br.ufal.notificacoesops.spec.prov.IManager;
 
-public class Manager implements IManager {
+class Manager implements IManager {
 
-	public Object getProvidedInterface(String name) {
-		// TODO Auto-generated method stub
-		return null;
+	private HashMap<String, Object> providedInterfaces;
+	private HashMap<String, Object> requiredInterfaces;
+	
+	//CONSTRUCTOR
+	Manager() {
+		this.providedInterfaces = new HashMap();
+		this.requiredInterfaces = new HashMap();
+
+		//atribuição de interfaces providas
+		this.providedInterfaces.put("INotificacaoOps", new FacadeNotificacao(this));
+		
+		//TODO
+		//atribuição de interfaces requeridas
+		this.requiredInterfaces.put("ILimiteOps", null);
+	}
+	
+
+	public Set<String> getProvidedInterfaces() {
+		return this.providedInterfaces.keySet();
 	}
 
-	public void setProvidedInterface(String name, Object facade) {
-		// TODO Auto-generated method stub
-
+	public Set<String> getRequiredInterfaces() {
+		return this.requiredInterfaces.keySet();
 	}
 
-	public Object getRequiredInterface(String name) {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public Object getProvidedInterface(String interfaceName) {
+		return this.providedInterfaces.get(interfaceName);
 	}
 
-	public void setRequiredInterface(String name, Object facade) {
-		// TODO Auto-generated method stub
-
+	public void setRequiredInterface(String interfaceName, Object interfaceObject) {
+		this.requiredInterfaces.put(interfaceName, interfaceObject);
 	}
-
-	public List<String> getProvidedInterfaces() {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public Object getRequiredInterface(String interfaceName) {
+		return this.requiredInterfaces.get(interfaceName);
 	}
-
-	public List<String> getRequiredInterfaces() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
+	
 }
