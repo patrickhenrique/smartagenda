@@ -22,6 +22,18 @@ class FacadeNotificacao implements INotificacaoOps{
 		this.notificacao.enviarNotificacao(null);
 		
 	}
+	
+	public void notificarReserva() {
+		
+	}
+	
+	public void notificarCancelamentoReserva() {
+		
+	}
+	
+	public void notificarEmprestimo() {
+		
+	}
 
 
 	public boolean isNotificado() {
